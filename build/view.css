@@ -1,0 +1,153 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../plugin-slug/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!../plugin-slug/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!../plugin-slug/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.dashicons {
+  font-family: dashicons !important;
+}
+
+.wp-block-business-card {
+  text-align: center;
+}
+.wp-block-business-card * {
+  box-sizing: border-box;
+}
+.wp-block-business-card .bcbBusinessCard {
+  max-width: 100%;
+  display: inline-block;
+}
+.wp-block-business-card .bcbBusinessCard.theme1, .wp-block-business-card .bcbBusinessCard.theme2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wp-block-business-card .bcbBusinessCard.theme1 .contacts, .wp-block-business-card .bcbBusinessCard.theme2 .contacts {
+  max-width: 50%;
+}
+.wp-block-business-card .bcbBusinessCard.theme2 {
+  align-items: flex-start;
+  flex-direction: row-reverse;
+}
+.wp-block-business-card .bcbBusinessCard .header {
+  display: grid;
+  height: -moz-min-content;
+  height: min-content;
+}
+.wp-block-business-card .bcbBusinessCard .header .name,
+.wp-block-business-card .bcbBusinessCard .header .title {
+  margin: 0 0 5px 0;
+  text-align: initial;
+  width: auto;
+}
+.wp-block-business-card .bcbBusinessCard .header .separator {
+  text-align: initial;
+  display: inline-block;
+}
+.wp-block-business-card .bcbBusinessCard .contacts .contact {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+}
+.wp-block-business-card .bcbBusinessCard .contacts .contact:not(:last-child) {
+  margin-bottom: 8px;
+}
+.wp-block-business-card .bcbBusinessCard .contacts .contact .icon {
+  font-size: 18px;
+  font-style: normal;
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  border-radius: 50%;
+}
+.wp-block-business-card .bcbBusinessCard .contacts .contact .text {
+  width: calc(100% - 50px);
+  margin: 0;
+  text-align: left;
+}
+.wp-block-business-card .theme3 {
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.wp-block-business-card .theme3 .bcb-card-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* Left content area */
+  /* Sidebar */
+}
+.wp-block-business-card .theme3 .bcb-card-main .bcb-card-content {
+  width: 66.66%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+.wp-block-business-card .theme3 .bcb-card-main .bcb-card-content .header .name {
+  margin-bottom: 6px;
+}
+.wp-block-business-card .theme3 .bcb-card-main .bcb-card-content .header .title {
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+.wp-block-business-card .theme3 .bcb-card-main .bcb-card-content .header .tagline {
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.8;
+  margin: 0px;
+}
+.wp-block-business-card .theme3 .bcb-card-main .bcb-card-content .contacts .contact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.wp-block-business-card .theme3 .bcb-card-main .bcb-card-content .contacts .contact .icon {
+  font-size: 12px;
+  font-style: normal;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+}
+.wp-block-business-card .theme3 .bcb-card-main .bcb-card-content .contacts .contact .text {
+  flex: 1;
+}
+.wp-block-business-card .theme3 .bcb-card-main .card-sidebar {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #1e40af;
+}
+.wp-block-business-card .theme3 .bcb-card-main .card-sidebar .sidebar-content {
+  text-align: center;
+  padding: 8px;
+}
+.wp-block-business-card .theme3 .bcb-card-main .card-sidebar .sidebar-content .company {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.wp-block-business-card .theme3 .bcb-card-main .card-sidebar .sidebar-content .social-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.wp-block-business-card .theme3 .bcb-card-main .card-sidebar .sidebar-content .social-icons .social-icon {
+  font-size: 16px;
+}
+.wp-block-business-card .theme3 .bcb-card-main .card-sidebar .sidebar-content .social-icons .social-icon a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=view.css.map*/
