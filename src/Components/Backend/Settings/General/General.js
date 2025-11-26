@@ -66,7 +66,7 @@ const General = ({
       <PanelBody
         initialOpen={false}
         className="bPlPanelBody"
-        title={__("Basic Info", "business-card")}
+        title={__("Header", "business-card")}
       >
         <TextControl
           label="Name"

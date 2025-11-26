@@ -122,15 +122,11 @@ const Theme3Editor = ({
                     <div
                       key={index}
                       className={`social-icon ${
-                        index === activeIndex ? "bPlNowEditing" : ""
+                        index === socialActiveIndex ? "bPlNowEditing" : ""
                       }`}
                       onClick={() => setSocialActiveIndex(index)}
                     >
-                      {icon?.class && (
-                        <a href={link}>
-                          <i className={`icon ${icon?.class}`}></i>
-                        </a>
-                      )}
+                      {icon?.class && <i className={`icon ${icon.class}`}></i>}
                     </div>
                   );
                 })}

@@ -38,6 +38,7 @@ const Style = ({ attributes, id }) => {
   const businessCardSl = `${mainSl} .${prefix}`;
   const headerSl = `${businessCardSl} .header`;
   const contactsSl = `${businessCardSl} .contacts`;
+  const sidebarSl = `${businessCardSl} .card-sidebar`;
 
   return (
     <style
@@ -46,10 +47,12 @@ const Style = ({ attributes, id }) => {
 		${getTypoCSS("", nameTypo)?.googleFontLink}
 		${getTypoCSS("", titleTypo)?.googleFontLink}
 		${getTypoCSS("", tagline?.typo)?.googleFontLink}
+		${getTypoCSS("", company?.typo)?.googleFontLink}
 		${getTypoCSS("", contactTextTypo)?.googleFontLink}
 		${getTypoCSS(`${headerSl} .name`, nameTypo)?.styles}
 		${getTypoCSS(`${headerSl} .title`, titleTypo)?.styles}
 		${getTypoCSS(`${headerSl} .tagline`, tagline?.typo)?.styles}
+		${getTypoCSS(`${sidebarSl} .company`, company?.typo)?.styles}
 		${getTypoCSS(`${contactsSl} .text`, contactTextTypo)?.styles}
 
 		${mainSl}{
@@ -61,6 +64,9 @@ const Style = ({ attributes, id }) => {
 			padding: ${getSpaceCSS(padding)};
 			${getBorderCSS(border)}
 			box-shadow: ${getShadowCSS(shadow)};
+		}
+		${sidebarSl}{
+			${getBackgroundCSS(sidebarBg)}
 		}
 		${headerSl}{
 			justify-items: ${headerAlign};
@@ -74,6 +80,9 @@ const Style = ({ attributes, id }) => {
 		}
 		${headerSl} .tagline{
 			color: ${tagline?.color};
+		}
+		${sidebarSl} .company{
+			color: ${company?.color};
 		}
 		${headerSl} .separator{
 			${getSeparatorCSS(headerSep)}

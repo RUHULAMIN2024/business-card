@@ -10,6 +10,11 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["background"] = {
           color: "#0000",
         };
+        draft["border"] = {};
+        draft["shadow"] = {
+          blur: "10px",
+          color: "#4527a480",
+        };
         draft["width"] = "650px";
         draft["padding"] = {
           ...draft.padding,
@@ -60,6 +65,11 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["background"] = {
           color: "#0000",
         };
+        draft["border"] = {};
+        draft["shadow"] = {
+          blur: "10px",
+          color: "#4527a480",
+        };
         draft["width"] = "650px";
         draft["padding"] = {
           ...draft.padding,
@@ -107,6 +117,17 @@ export const themeSwitch = (theme = "", attributes) =>
       case "theme3":
         draft["background"] = {
           color: "#3b82f6",
+        };
+        draft["border"] = {
+          radius: "16px",
+        };
+        draft["shadow"] = {
+          blur: "25px",
+          color: "#00000033",
+          hOffset: "0px",
+          isInset: false,
+          spreed: "",
+          vOffset: "10px",
         };
         draft["width"] = "400px";
         draft["padding"] = {
@@ -156,6 +177,11 @@ export const themeSwitch = (theme = "", attributes) =>
       default:
         draft["background"] = {
           color: "#0000",
+        };
+        draft["border"] = {};
+        draft["shadow"] = {
+          blur: "10px",
+          color: "#4527a480",
         };
         draft["width"] = "600px";
         draft["padding"] = {

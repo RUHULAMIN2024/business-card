@@ -1235,13 +1235,11 @@ const Theme3Editor = ({
     } = social;
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: index,
-      className: `social-icon ${index === activeIndex ? "bPlNowEditing" : ""}`,
+      className: `social-icon ${index === socialActiveIndex ? "bPlNowEditing" : ""}`,
       onClick: () => setSocialActiveIndex(index)
-    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-      href: link
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      className: `icon ${icon?.class}`
-    })));
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }));
   }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme3Editor);
@@ -1300,16 +1298,19 @@ const Style = ({
   const businessCardSl = `${mainSl} .${_utils_data__WEBPACK_IMPORTED_MODULE_3__.prefix}`;
   const headerSl = `${businessCardSl} .header`;
   const contactsSl = `${businessCardSl} .contacts`;
+  const sidebarSl = `${businessCardSl} .card-sidebar`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_1__.escapeHTML)(`
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", nameTypo)?.googleFontLink}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", titleTypo)?.googleFontLink}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", tagline?.typo)?.googleFontLink}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", company?.typo)?.googleFontLink}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", contactTextTypo)?.googleFontLink}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${headerSl} .name`, nameTypo)?.styles}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${headerSl} .title`, titleTypo)?.styles}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${headerSl} .tagline`, tagline?.typo)?.styles}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${sidebarSl} .company`, company?.typo)?.styles}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${contactsSl} .text`, contactTextTypo)?.styles}
 
 		${mainSl}{
@@ -1321,6 +1322,9 @@ const Style = ({
 			padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getSpaceCSS)(padding)};
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(border)}
 			box-shadow: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getShadowCSS)(shadow)};
+		}
+		${sidebarSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(sidebarBg)}
 		}
 		${headerSl}{
 			justify-items: ${headerAlign};
@@ -1334,6 +1338,9 @@ const Style = ({
 		}
 		${headerSl} .tagline{
 			color: ${tagline?.color};
+		}
+		${sidebarSl} .company{
+			color: ${company?.color};
 		}
 		${headerSl} .separator{
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getSeparatorCSS)(headerSep)}
@@ -1500,9 +1507,98 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../bpl-tools/utils/common */ "../bpl-tools/utils/common.js");
 
-const Theme3 = () => {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null);
+
+
+const Theme3 = ({
+  attributes
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    secondaryColor,
+    theme = "",
+    isHeaderSep,
+    businessCard,
+    socials
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "name",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(name)
+    }
+  }), title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(title)
+    }
+  }), isHeaderSep && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "separator"
+  }), businessCard?.tagline && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "tagline",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.tagline)
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length > 0 && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: "contact"
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "text",
+      dangerouslySetInnerHTML: {
+        __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
+      }
+    }));
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-sidebar",
+    style: {
+      backgroundColor: secondaryColor
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "sidebar-content"
+  }, businessCard?.company && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "company",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.company)
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "social-icons"
+  }, socials?.length > 0 && socials.map((social, index) => {
+    const {
+      icon,
+      link,
+      openInNewTab
+    } = social;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: "social-icon"
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(link),
+      target: openInNewTab ? "_blank" : "",
+      rel: "noopener noreferrer"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    })));
+  }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme3);
 

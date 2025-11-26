@@ -66,9 +66,7 @@
 }
 .wp-block-business-card .theme3 {
   height: 240px;
-  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 .wp-block-business-card .theme3 .bcb-card-main {
   width: 100%;

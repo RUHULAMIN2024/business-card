@@ -51,9 +51,23 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           onChange={(val) => setAttributes({ background: val })}
           defaults={{ color: "#0000" }}
         />
+        <Background
+          label={__("Sidebar Background:", "business-card")}
+          value={sidebarBg}
+          onChange={(v) =>
+            setAttributes({
+              businessCardStyles: updateData(
+                businessCardStyles,
+                v,
+                "sidebarBg"
+              ),
+            })
+          }
+          defaults={{ color: "#0000" }}
+        />
 
         <SpaceControl
-          className="mt20"
+          className="mt15"
           label={__("Padding:", "business-card")}
           value={padding}
           onChange={(val) => setAttributes({ padding: val })}
@@ -90,7 +104,7 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
         </PanelRow>
 
         <SpaceControl
-          className="mt20"
+          className="mt15"
           label={__("Margin:", "business-card")}
           value={headerMargin}
           onChange={(val) => setAttributes({ headerMargin: val })}
@@ -98,7 +112,7 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
         />
 
         <Typography
-          className="mt20"
+          className="mt15"
           label={__("Name Typography:", "business-card")}
           value={nameTypo}
           onChange={(val) => setAttributes({ nameTypo: val })}
@@ -117,7 +131,7 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
         />
 
         <Typography
-          className="mt20"
+          className="mt15"
           label={__("Title Typography:", "business-card")}
           value={titleTypo}
           onChange={(val) => setAttributes({ titleTypo: val })}
@@ -133,7 +147,7 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
         {theme === "theme3" && (
           <>
             <Typography
-              className="mt20"
+              className="mt15"
               label={__("Tagline Typography:", "business-card")}
               value={tagline.typo}
               onChange={(v) =>
@@ -162,6 +176,36 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
                 })
               }
             />
+            <Typography
+              className="mt15"
+              label={__("Company Typography:", "business-card")}
+              value={company.typo}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "company",
+                    "typo"
+                  ),
+                })
+              }
+            />
+
+            <ColorControl
+              label={__("Company Color:", "business-card")}
+              value={company.color}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "company",
+                    "color"
+                  ),
+                })
+              }
+            />
           </>
         )}
 
@@ -173,7 +217,7 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
 
         {isHeaderSep && (
           <SeparatorControl
-            className="mt20"
+            className="mt15"
             value={headerSep}
             onChange={(val) => setAttributes({ headerSep: val })}
             defaults={{

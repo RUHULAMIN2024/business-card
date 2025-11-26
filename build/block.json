@@ -173,19 +173,22 @@
           "icon": {
             "class": "fa-brands fa-linkedin-in"
           },
-          "link": "https://example.com"
+          "link": "https://example.com",
+          "openInNewTab": true
         },
         {
           "icon": {
             "class": "fa-brands fa-twitter"
           },
-          "link": "https://example.com"
+          "link": "https://example.com",
+          "openInNewTab": true
         },
         {
           "icon": {
             "class": "fa-brands fa-instagram"
           },
-          "link": "https://example.com"
+          "link": "https://example.com",
+          "openInNewTab": true
         }
       ]
     },

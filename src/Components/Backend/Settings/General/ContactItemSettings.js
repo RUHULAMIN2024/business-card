@@ -31,7 +31,7 @@ const ContactItemSettings = ({
       />
 
       <TextControl
-        className="mt20"
+        className="mt15"
         label={__("Text", "business-card")}
         value={text}
         onChange={(val) => updateContact(val, "text")}
