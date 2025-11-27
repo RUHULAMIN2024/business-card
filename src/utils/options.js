@@ -36,6 +36,11 @@ export const themeOptions = [
   { label: __("Theme 1", "business-card"), value: "theme1" },
   { label: __("Theme 2", "business-card"), value: "theme2" },
   { label: __("Theme 3", "business-card"), value: "theme3" },
+  { label: __("Theme 4", "business-card"), value: "theme4" },
+  { label: __("Theme 5", "business-card"), value: "theme5" },
+  { label: __("Theme 6", "business-card"), value: "theme6" },
+  { label: __("Theme 7", "business-card"), value: "theme7" },
+  { label: __("Theme 8", "business-card"), value: "theme8" },
 ];
 
 export const previewOptions = [
@@ -67,6 +72,46 @@ export const previewOptions = [
   {
     label: "Theme 3",
     value: "theme3",
+    img: "",
+    height: "auto",
+    width: "160px",
+    isPro: false,
+  },
+  {
+    label: "Theme 4",
+    value: "theme4",
+    img: "",
+    height: "auto",
+    width: "160px",
+    isPro: false,
+  },
+  {
+    label: "Theme 5",
+    value: "theme5",
+    img: "",
+    height: "auto",
+    width: "160px",
+    isPro: false,
+  },
+  {
+    label: "Theme 6",
+    value: "theme6",
+    img: "",
+    height: "auto",
+    width: "160px",
+    isPro: false,
+  },
+  {
+    label: "Theme 7",
+    value: "theme7",
+    img: "",
+    height: "auto",
+    width: "160px",
+    isPro: false,
+  },
+  {
+    label: "Theme 8",
+    value: "theme8",
     img: "",
     height: "auto",
     width: "160px",

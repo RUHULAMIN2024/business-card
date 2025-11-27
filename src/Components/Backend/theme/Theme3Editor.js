@@ -1,4 +1,3 @@
-import { Mail, Phone, Globe, Linkedin, Twitter, Instagram } from "lucide-react";
 import { prefix } from "../../../utils/data";
 import { RichText } from "@wordpress/block-editor";
 

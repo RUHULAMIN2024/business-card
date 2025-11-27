@@ -52,7 +52,7 @@ const Style = ({ attributes, id }) => {
 		${getTypoCSS(`${headerSl} .name`, nameTypo)?.styles}
 		${getTypoCSS(`${headerSl} .title`, titleTypo)?.styles}
 		${getTypoCSS(`${headerSl} .tagline`, tagline?.typo)?.styles}
-		${getTypoCSS(`${sidebarSl} .company`, company?.typo)?.styles}
+		${getTypoCSS(`${businessCardSl} .company`, company?.typo)?.styles}
 		${getTypoCSS(`${contactsSl} .text`, contactTextTypo)?.styles}
 
 		${mainSl}{
@@ -81,7 +81,7 @@ const Style = ({ attributes, id }) => {
 		${headerSl} .tagline{
 			color: ${tagline?.color};
 		}
-		${sidebarSl} .company{
+		${businessCardSl} .company{
 			color: ${company?.color};
 		}
 		${headerSl} .separator{

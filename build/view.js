@@ -1126,7 +1126,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const Theme3Editor = ({
   attributes,
   setSocialActiveIndex,
@@ -1246,6 +1245,528 @@ const Theme3Editor = ({
 
 /***/ }),
 
+/***/ "./src/Components/Backend/theme/Theme4Editor.js":
+/*!******************************************************!*\
+  !*** ./src/Components/Backend/theme/Theme4Editor.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+
+
+
+const Theme4Editor = ({
+  attributes,
+  setAttributes,
+  updateContact,
+  activeIndex,
+  setActiveIndex
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    isHeaderSep,
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bg-circle"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "name",
+    tagName: "h3",
+    value: name,
+    onChange: val => setAttributes({
+      name: val
+    }),
+    placeholder: "Your Name",
+    inlineToolbar: true
+  }), isHeaderSep && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "separator"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "title",
+    tagName: "p",
+    value: title,
+    onChange: val => setAttributes({
+      title: val
+    }),
+    placeholder: "Job Title",
+    inlineToolbar: true
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "company",
+    tagName: "p",
+    value: businessCard?.company,
+    onChange: val => setAttributes({
+      businessCard: {
+        ...businessCard,
+        company: val
+      }
+    }),
+    placeholder: "Company",
+    inlineToolbar: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: `contact ${index === activeIndex ? "bPlNowEditing" : ""}`,
+      onClick: () => setActiveIndex(index)
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+      className: "text",
+      tagName: "p",
+      value: text,
+      onChange: val => updateContact(index, val, "text"),
+      placeholder: "Contact info",
+      inlineToolbar: true
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme4Editor);
+
+/***/ }),
+
+/***/ "./src/Components/Backend/theme/Theme5Editor.js":
+/*!******************************************************!*\
+  !*** ./src/Components/Backend/theme/Theme5Editor.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+
+
+
+const Theme5Editor = ({
+  attributes,
+  setAttributes,
+  updateContact,
+  activeIndex,
+  setActiveIndex
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle-1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle-2"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "company",
+    tagName: "p",
+    value: businessCard?.company,
+    onChange: val => setAttributes({
+      businessCard: {
+        ...businessCard,
+        company: val
+      }
+    }),
+    placeholder: "Company",
+    inlineToolbar: true
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "name",
+    tagName: "h3",
+    value: name,
+    onChange: val => setAttributes({
+      name: val
+    }),
+    placeholder: "Your Name",
+    inlineToolbar: true
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "title",
+    tagName: "p",
+    value: title,
+    onChange: val => setAttributes({
+      title: val
+    }),
+    placeholder: "Job Title",
+    inlineToolbar: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: `contact ${index === activeIndex ? "bPlNowEditing" : ""}`,
+      onClick: () => setActiveIndex(index)
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+      className: "text",
+      tagName: "p",
+      value: text,
+      onChange: val => updateContact(index, val, "text"),
+      placeholder: "Contact info",
+      inlineToolbar: true
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme5Editor);
+
+/***/ }),
+
+/***/ "./src/Components/Backend/theme/Theme6Editor.js":
+/*!******************************************************!*\
+  !*** ./src/Components/Backend/theme/Theme6Editor.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const Theme6Editor = ({
+  attributes,
+  setAttributes,
+  updateContact,
+  activeIndex,
+  setActiveIndex
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-sidebar",
+    style: {
+      backgroundColor: businessCard?.primary_color
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "sidebar-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bg-circles"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "c1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "c2"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "initial"
+  }, (name || "Y")[0].toUpperCase()))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    className: "name",
+    tagName: "h3",
+    value: name,
+    onChange: val => setAttributes({
+      name: val
+    }),
+    placeholder: "Your Name",
+    inlineToolbar: true
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    className: "title",
+    tagName: "p",
+    value: title,
+    onChange: val => setAttributes({
+      title: val
+    }),
+    placeholder: "Job Title",
+    inlineToolbar: true
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    className: "company",
+    tagName: "p",
+    value: businessCard?.company,
+    onChange: val => setAttributes({
+      businessCard: {
+        ...businessCard,
+        company: val
+      }
+    }),
+    placeholder: "Company",
+    inlineToolbar: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: `contact ${index === activeIndex ? "bPlNowEditing" : ""}`,
+      onClick: () => setActiveIndex(index)
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon?.class}`
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+      className: "text",
+      tagName: "p",
+      value: text,
+      onChange: val => updateContact(index, val, "text"),
+      placeholder: "Contact info",
+      inlineToolbar: true
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme6Editor);
+
+/***/ }),
+
+/***/ "./src/Components/Backend/theme/Theme7Editor.js":
+/*!******************************************************!*\
+  !*** ./src/Components/Backend/theme/Theme7Editor.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+
+
+
+const Theme7Editor = ({
+  attributes,
+  setAttributes,
+  updateContact,
+  activeIndex,
+  setActiveIndex
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle circle-1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle circle-2"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "name",
+    tagName: "h3",
+    value: name,
+    onChange: val => setAttributes({
+      name: val
+    }),
+    placeholder: "Your Name",
+    inlineToolbar: true
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "title",
+    tagName: "p",
+    value: title,
+    onChange: val => setAttributes({
+      title: val
+    }),
+    placeholder: "Job Title",
+    inlineToolbar: true
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    className: "company",
+    tagName: "p",
+    value: businessCard?.company,
+    onChange: val => setAttributes({
+      businessCard: {
+        ...businessCard,
+        company: val
+      }
+    }),
+    placeholder: "Company",
+    inlineToolbar: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length > 0 && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: `contact ${index === activeIndex ? "bPlNowEditing" : ""}`,
+      onClick: () => setActiveIndex(index)
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+      className: "text",
+      tagName: "p",
+      value: text,
+      onChange: val => updateContact(index, val, "text"),
+      placeholder: "Contact info",
+      inlineToolbar: true
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme7Editor);
+
+/***/ }),
+
+/***/ "./src/Components/Backend/theme/Theme8Editor.js":
+/*!******************************************************!*\
+  !*** ./src/Components/Backend/theme/Theme8Editor.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+
+
+
+const Theme8Editor = ({
+  attributes,
+  setAttributes,
+  activeIndex,
+  setActiveIndex,
+  updateContact
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard,
+    primaryColor,
+    secondaryColor,
+    textColor
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main theme8"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "tilt-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "tilt-inner"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "top-gradient"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "info-box"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    tagName: "h3",
+    className: "name",
+    value: name,
+    onChange: val => setAttributes({
+      name: val
+    }),
+    placeholder: "Your Name",
+    inlineToolbar: true,
+    style: {
+      color: textColor
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    tagName: "p",
+    className: "title",
+    value: title,
+    onChange: val => setAttributes({
+      title: val
+    }),
+    placeholder: "Job Title",
+    inlineToolbar: true,
+    style: {
+      color: primaryColor
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: `contact ${index === activeIndex ? "bPlNowEditing" : ""}`,
+      onClick: () => setActiveIndex(index),
+      style: {
+        color: textColor
+      }
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`,
+      style: {
+        color: primaryColor
+      }
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+      tagName: "p",
+      className: "text",
+      value: text,
+      onChange: val => updateContact(index, val, "text"),
+      placeholder: "Contact info",
+      inlineToolbar: true
+    }));
+  })))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme8Editor);
+
+/***/ }),
+
 /***/ "./src/Components/Common/Style.js":
 /*!****************************************!*\
   !*** ./src/Components/Common/Style.js ***!
@@ -1310,7 +1831,7 @@ const Style = ({
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${headerSl} .name`, nameTypo)?.styles}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${headerSl} .title`, titleTypo)?.styles}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${headerSl} .tagline`, tagline?.typo)?.styles}
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${sidebarSl} .company`, company?.typo)?.styles}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${businessCardSl} .company`, company?.typo)?.styles}
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${contactsSl} .text`, contactTextTypo)?.styles}
 
 		${mainSl}{
@@ -1339,7 +1860,7 @@ const Style = ({
 		${headerSl} .tagline{
 			color: ${tagline?.color};
 		}
-		${sidebarSl} .company{
+		${businessCardSl} .company{
 			color: ${company?.color};
 		}
 		${headerSl} .separator{
@@ -1373,8 +1894,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Backend_theme_BusinessCardEditor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Backend/theme/BusinessCardEditor */ "./src/Components/Backend/theme/BusinessCardEditor.js");
 /* harmony import */ var _Backend_theme_Theme3Editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Backend/theme/Theme3Editor */ "./src/Components/Backend/theme/Theme3Editor.js");
-/* harmony import */ var _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Frontend/theme/BusinessCard */ "./src/Components/Frontend/theme/BusinessCard.js");
-/* harmony import */ var _Frontend_theme_Theme3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Frontend/theme/Theme3 */ "./src/Components/Frontend/theme/Theme3.js");
+/* harmony import */ var _Backend_theme_Theme4Editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Backend/theme/Theme4Editor */ "./src/Components/Backend/theme/Theme4Editor.js");
+/* harmony import */ var _Backend_theme_Theme5Editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Backend/theme/Theme5Editor */ "./src/Components/Backend/theme/Theme5Editor.js");
+/* harmony import */ var _Backend_theme_Theme6Editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Backend/theme/Theme6Editor */ "./src/Components/Backend/theme/Theme6Editor.js");
+/* harmony import */ var _Backend_theme_Theme7Editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Backend/theme/Theme7Editor */ "./src/Components/Backend/theme/Theme7Editor.js");
+/* harmony import */ var _Backend_theme_Theme8Editor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Backend/theme/Theme8Editor */ "./src/Components/Backend/theme/Theme8Editor.js");
+/* harmony import */ var _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Frontend/theme/BusinessCard */ "./src/Components/Frontend/theme/BusinessCard.js");
+/* harmony import */ var _Frontend_theme_Theme3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Frontend/theme/Theme3 */ "./src/Components/Frontend/theme/Theme3.js");
+/* harmony import */ var _Frontend_theme_Theme4__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../Frontend/theme/Theme4 */ "./src/Components/Frontend/theme/Theme4.js");
+/* harmony import */ var _Frontend_theme_Theme5__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../Frontend/theme/Theme5 */ "./src/Components/Frontend/theme/Theme5.js");
+/* harmony import */ var _Frontend_theme_Theme6__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../Frontend/theme/Theme6 */ "./src/Components/Frontend/theme/Theme6.js");
+/* harmony import */ var _Frontend_theme_Theme7__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../Frontend/theme/Theme7 */ "./src/Components/Frontend/theme/Theme7.js");
+/* harmony import */ var _Frontend_theme_Theme8__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../Frontend/theme/Theme8 */ "./src/Components/Frontend/theme/Theme8.js");
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1399,18 +1940,38 @@ const Theme = ({
   const themeComponents = {
     theme1: {
       editor: _Backend_theme_BusinessCardEditor__WEBPACK_IMPORTED_MODULE_1__["default"],
-      view: _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_3__["default"]
+      view: _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_8__["default"]
     },
     theme2: {
       editor: _Backend_theme_BusinessCardEditor__WEBPACK_IMPORTED_MODULE_1__["default"],
-      view: _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_3__["default"]
+      view: _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_8__["default"]
     },
     theme3: {
       editor: _Backend_theme_Theme3Editor__WEBPACK_IMPORTED_MODULE_2__["default"],
-      view: _Frontend_theme_Theme3__WEBPACK_IMPORTED_MODULE_4__["default"]
+      view: _Frontend_theme_Theme3__WEBPACK_IMPORTED_MODULE_9__["default"]
+    },
+    theme4: {
+      editor: _Backend_theme_Theme4Editor__WEBPACK_IMPORTED_MODULE_3__["default"],
+      view: _Frontend_theme_Theme4__WEBPACK_IMPORTED_MODULE_10__["default"]
+    },
+    theme5: {
+      editor: _Backend_theme_Theme5Editor__WEBPACK_IMPORTED_MODULE_4__["default"],
+      view: _Frontend_theme_Theme5__WEBPACK_IMPORTED_MODULE_11__["default"]
+    },
+    theme6: {
+      editor: _Backend_theme_Theme6Editor__WEBPACK_IMPORTED_MODULE_5__["default"],
+      view: _Frontend_theme_Theme6__WEBPACK_IMPORTED_MODULE_12__["default"]
+    },
+    theme7: {
+      editor: _Backend_theme_Theme7Editor__WEBPACK_IMPORTED_MODULE_6__["default"],
+      view: _Frontend_theme_Theme7__WEBPACK_IMPORTED_MODULE_13__["default"]
+    },
+    theme8: {
+      editor: _Backend_theme_Theme8Editor__WEBPACK_IMPORTED_MODULE_7__["default"],
+      view: _Frontend_theme_Theme8__WEBPACK_IMPORTED_MODULE_14__["default"]
     }
   };
-  const Component = isEditor ? themeComponents[theme]?.editor || _Backend_theme_BusinessCardEditor__WEBPACK_IMPORTED_MODULE_1__["default"] : themeComponents[theme]?.view || _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_3__["default"];
+  const Component = isEditor ? themeComponents[theme]?.editor || _Backend_theme_BusinessCardEditor__WEBPACK_IMPORTED_MODULE_1__["default"] : themeComponents[theme]?.view || _Frontend_theme_BusinessCard__WEBPACK_IMPORTED_MODULE_8__["default"];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Component, {
     attributes: attributes,
     setAttributes: setAttributes,
@@ -1601,6 +2162,431 @@ const Theme3 = ({
   }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme3);
+
+/***/ }),
+
+/***/ "./src/Components/Frontend/theme/Theme4.js":
+/*!*************************************************!*\
+  !*** ./src/Components/Frontend/theme/Theme4.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../bpl-tools/utils/common */ "../bpl-tools/utils/common.js");
+
+
+
+const Theme4 = ({
+  attributes
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    isHeaderSep,
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bg-circle"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "name",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(name)
+    }
+  }), isHeaderSep && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "separator"
+  }), title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(title)
+    }
+  }), businessCard?.company && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "company",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.company)
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length > 0 && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: "contact"
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), text && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "text",
+      dangerouslySetInnerHTML: {
+        __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
+      }
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme4);
+
+/***/ }),
+
+/***/ "./src/Components/Frontend/theme/Theme5.js":
+/*!*************************************************!*\
+  !*** ./src/Components/Frontend/theme/Theme5.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../bpl-tools/utils/common */ "../bpl-tools/utils/common.js");
+
+
+
+const Theme5 = ({
+  attributes
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle-1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle-2"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, businessCard?.company && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "company",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.company)
+    }
+  }), name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "name",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(name)
+    }
+  }), title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(title)
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length > 0 && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: "contact"
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), text && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "text",
+      dangerouslySetInnerHTML: {
+        __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
+      }
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme5);
+
+/***/ }),
+
+/***/ "./src/Components/Frontend/theme/Theme6.js":
+/*!*************************************************!*\
+  !*** ./src/Components/Frontend/theme/Theme6.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../bpl-tools/utils/common */ "../bpl-tools/utils/common.js");
+
+
+
+const Theme6 = ({
+  attributes
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-sidebar",
+    style: {
+      backgroundColor: businessCard?.primary_color
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "sidebar-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bg-circles"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "c1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "c2"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "initial"
+  }, (name || "Y")[0].toUpperCase()))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "name",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(name)
+    }
+  }), title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(title)
+    }
+  }), businessCard?.company && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "company",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.company)
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length > 0 && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: "contact"
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), text && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "text",
+      dangerouslySetInnerHTML: {
+        __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
+      }
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme6);
+
+/***/ }),
+
+/***/ "./src/Components/Frontend/theme/Theme7.js":
+/*!*************************************************!*\
+  !*** ./src/Components/Frontend/theme/Theme7.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../bpl-tools/utils/common */ "../bpl-tools/utils/common.js");
+
+
+
+const Theme7 = ({
+  attributes
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle circle-1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "circle circle-2"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "header"
+  }, name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "name",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(name)
+    }
+  }), title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(title)
+    }
+  }), businessCard?.company && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "company",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.company)
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length > 0 && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: "contact"
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`
+    }), text && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "text",
+      dangerouslySetInnerHTML: {
+        __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
+      }
+    }));
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme7);
+
+/***/ }),
+
+/***/ "./src/Components/Frontend/theme/Theme8.js":
+/*!*************************************************!*\
+  !*** ./src/Components/Frontend/theme/Theme8.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/data */ "./src/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../bpl-tools/utils/common */ "../bpl-tools/utils/common.js");
+
+
+
+const Theme8 = ({
+  attributes
+}) => {
+  const {
+    name,
+    title,
+    contacts,
+    theme = "",
+    businessCard,
+    primaryColor,
+    secondaryColor,
+    textColor
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bcb-card-main theme8"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "tilt-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "tilt-inner"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "top-gradient",
+    style: {
+      background: `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "info-box"
+  }, name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "name",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(name)
+    },
+    style: {
+      color: textColor
+    }
+  }), title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "title",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(title)
+    },
+    style: {
+      color: primaryColor
+    }
+  }), businessCard?.company && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "company",
+    dangerouslySetInnerHTML: {
+      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.company)
+    },
+    style: {
+      color: secondaryColor
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "contacts"
+  }, contacts?.length > 0 && contacts.map((contact, index) => {
+    const {
+      icon,
+      text
+    } = contact;
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index,
+      className: "contact",
+      style: {
+        color: textColor
+      }
+    }, icon?.class && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `icon ${icon.class}`,
+      style: {
+        color: primaryColor
+      }
+    }), text && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "text",
+      dangerouslySetInnerHTML: {
+        __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
+      }
+    }));
+  })))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme8);
 
 /***/ }),
 
