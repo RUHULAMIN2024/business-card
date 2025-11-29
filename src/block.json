@@ -192,7 +192,8 @@
       "type": "object",
       "default": {
         "tagline": "Building the future, one line at a time",
-        "company": "Tech Crop"
+        "company": "Tech Crop",
+        "height": ""
       }
     },
     "businessCardStyles": {
@@ -222,7 +223,8 @@
         },
         "sidebarBg": {
           "color": "#1e40af"
-        }
+        },
+        "socialIconColor": "#fff"
       }
     }
   },

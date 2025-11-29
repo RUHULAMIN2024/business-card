@@ -41,7 +41,7 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
     contactTextColor,
     businessCardStyles,
   } = attributes;
-  const { tagline, company, sidebarBg } = businessCardStyles;
+  const { tagline, company, sidebarBg, socialIconColor } = businessCardStyles;
   return (
     <>
       <PanelBody className="bPlPanelBody" title={__("Card", "business-card")}>
@@ -51,20 +51,22 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           onChange={(val) => setAttributes({ background: val })}
           defaults={{ color: "#0000" }}
         />
-        <Background
-          label={__("Sidebar Background:", "business-card")}
-          value={sidebarBg}
-          onChange={(v) =>
-            setAttributes({
-              businessCardStyles: updateData(
-                businessCardStyles,
-                v,
-                "sidebarBg"
-              ),
-            })
-          }
-          defaults={{ color: "#0000" }}
-        />
+        {theme === "theme3" && (
+          <Background
+            label={__("Sidebar Background:", "business-card")}
+            value={sidebarBg}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "sidebarBg"
+                ),
+              })
+            }
+            defaults={{ color: "#0000" }}
+          />
+        )}
 
         <SpaceControl
           className="mt15"
@@ -209,24 +211,31 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           </>
         )}
 
-        <ToggleControl
-          label={__("Show Separator", "business-card")}
-          checked={isHeaderSep}
-          onChange={(val) => setAttributes({ isHeaderSep: val })}
-        />
-
-        {isHeaderSep && (
-          <SeparatorControl
-            className="mt15"
-            value={headerSep}
-            onChange={(val) => setAttributes({ headerSep: val })}
-            defaults={{
-              width: "20%",
-              height: "2px",
-              style: "solid",
-              color: "#828282",
-            }}
-          />
+        {(theme === "default" ||
+          theme === "theme1" ||
+          theme === "theme2" ||
+          theme === "theme4") && (
+          <>
+            <ToggleControl
+              className="mt15"
+              label={__("Show Separator", "business-card")}
+              checked={isHeaderSep}
+              onChange={(val) => setAttributes({ isHeaderSep: val })}
+            />
+            {isHeaderSep && (
+              <SeparatorControl
+                className="mt15"
+                value={headerSep}
+                onChange={(val) => setAttributes({ headerSep: val })}
+                defaults={{
+                  width: "20%",
+                  height: "2px",
+                  style: "solid",
+                  color: "#828282",
+                }}
+              />
+            )}
+          </>
         )}
       </PanelBody>
 
@@ -235,12 +244,25 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
         title={__("Contact", "business-card")}
         initialOpen={false}
       >
-        <ColorsControl
-          label={__("Icon Colors", "business-card")}
-          value={contactIconColors}
-          onChange={(val) => setAttributes({ contactIconColors: val })}
-          defaults={{ color: "#fff", bg: "#4527a4" }}
-        />
+        {theme === "default" || theme === "theme1" || theme === "theme2" ? (
+          <ColorsControl
+            label={__("Icon Colors", "business-card")}
+            value={contactIconColors}
+            onChange={(val) => setAttributes({ contactIconColors: val })}
+            defaults={{ color: "#fff", bg: "#4527a4" }}
+          />
+        ) : (
+          <ColorControl
+            label={__("Icon Color", "business-card")}
+            value={contactIconColors?.color}
+            onChange={(v) =>
+              setAttributes({
+                contactIconColors: updateData(contactIconColors, v, "color"),
+              })
+            }
+            defaultColor="#fff"
+          />
+        )}
 
         <Typography
           label={__("Text Typography:", "business-card")}
@@ -259,6 +281,28 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           defaultColor="#828282"
         />
       </PanelBody>
+      {theme === "theme3" && (
+        <PanelBody
+          className="bPlPanelBody"
+          title={__("Social Icons", "business-card")}
+          initialOpen={false}
+        >
+          <ColorControl
+            label={__("Color", "business-card")}
+            value={socialIconColor}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "socialIconColor"
+                ),
+              })
+            }
+            defaultColor="#fff"
+          />
+        </PanelBody>
+      )}
     </>
   );
 };

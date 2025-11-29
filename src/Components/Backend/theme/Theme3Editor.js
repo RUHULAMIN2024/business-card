@@ -23,116 +23,106 @@ const Theme3Editor = ({
 
   return (
     <div className={`${prefix} ${theme}`}>
-      <div className="bcb-card-main">
-        <div className="bcb-card-content">
-          {/* Header Section */}
-          <div className="header">
-            <RichText
-              className="name"
-              tagName="h3"
-              value={name}
-              onChange={(val) => setAttributes({ name: val })}
-              placeholder="Your Name"
-              inlineToolbar
-            />
+      <div className="bcb-card-content">
+        {/* Header Section */}
+        <div className="header">
+          <RichText
+            className="name"
+            tagName="h3"
+            value={name}
+            onChange={(val) => setAttributes({ name: val })}
+            placeholder="Your Name"
+            inlineToolbar
+          />
 
+          <RichText
+            className="title"
+            tagName="p"
+            value={title}
+            onChange={(val) => setAttributes({ title: val })}
+            placeholder="Job Title"
+            inlineToolbar
+          />
+
+          {businessCard.tagline && (
             <RichText
-              className="title"
+              className="tagline"
               tagName="p"
-              value={title}
-              onChange={(val) => setAttributes({ title: val })}
-              placeholder="Job Title"
+              value={businessCard.tagline}
+              onChange={(val) =>
+                setAttributes({
+                  businessCard: { ...businessCard, tagline: val },
+                })
+              }
+              placeholder="Tagline"
               inlineToolbar
             />
+          )}
+        </div>
 
-            {isHeaderSep && <span className="separator"></span>}
+        {/* Contacts */}
+        <div className="contacts">
+          {contacts?.length &&
+            contacts.map((contact, index) => {
+              const { icon, text } = contact;
 
-            {businessCard.tagline && (
-              <RichText
-                className="tagline"
-                tagName="p"
-                value={businessCard.tagline}
-                onChange={(val) =>
-                  setAttributes({
-                    businessCard: { ...businessCard, tagline: val },
-                  })
-                }
-                placeholder="Tagline"
-                inlineToolbar
-              />
-            )}
-          </div>
+              return (
+                <div
+                  key={index}
+                  className={`contact ${
+                    index === activeIndex ? "bPlNowEditing" : ""
+                  }`}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  {icon?.class && <i className={`icon ${icon?.class}`}></i>}
 
-          {/* Contacts */}
-          <div className="contacts">
-            {contacts?.length &&
-              contacts.map((contact, index) => {
-                const { icon, text } = contact;
+                  <RichText
+                    className="text"
+                    tagName="p"
+                    value={text}
+                    onChange={(val) => updateContact(index, val, "text")}
+                    placeholder="Contact info"
+                    inlineToolbar
+                  />
+                </div>
+              );
+            })}
+        </div>
+      </div>
+
+      {/* Sidebar */}
+      <div className="card-sidebar" style={{ backgroundColor: secondaryColor }}>
+        <div className="sidebar-content">
+          <RichText
+            className="company"
+            tagName="p"
+            value={businessCard?.company}
+            onChange={(val) =>
+              setAttributes({
+                businessCard: { ...businessCard, company: val },
+              })
+            }
+            placeholder="Company"
+            inlineToolbar
+          />
+
+          <div className="social-icons">
+            {socials?.length &&
+              socials.map((social, index) => {
+                const { icon, link } = social;
 
                 return (
                   <div
                     key={index}
-                    className={`contact ${
-                      index === activeIndex ? "bPlNowEditing" : ""
+                    className={`social-icon ${
+                      index === socialActiveIndex ? "bPlNowEditing" : ""
                     }`}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => setSocialActiveIndex(index)}
                   >
-                    {icon?.class && <i className={`icon ${icon?.class}`}></i>}
-
-                    <RichText
-                      className="text"
-                      tagName="p"
-                      value={text}
-                      onChange={(val) => updateContact(index, val, "text")}
-                      placeholder="Contact info"
-                      inlineToolbar
-                    />
+                    {icon?.class && <i className={`icon ${icon.class}`}></i>}
                   </div>
                 );
               })}
-          </div>
-        </div>
-
-        {/* Sidebar */}
-        <div
-          className="card-sidebar"
-          style={{ backgroundColor: secondaryColor }}
-        >
-          <div className="sidebar-content">
-            <RichText
-              className="company"
-              tagName="p"
-              value={businessCard?.company}
-              onChange={(val) =>
-                setAttributes({
-                  businessCard: { ...businessCard, company: val },
-                })
-              }
-              placeholder="Company"
-              inlineToolbar
-            />
-
-            <div className="social-icons">
-              {socials?.length &&
-                socials.map((social, index) => {
-                  const { icon, link } = social;
-
-                  return (
-                    <div
-                      key={index}
-                      className={`social-icon ${
-                        index === socialActiveIndex ? "bPlNowEditing" : ""
-                      }`}
-                      onClick={() => setSocialActiveIndex(index)}
-                    >
-                      {icon?.class && <i className={`icon ${icon.class}`}></i>}
-                    </div>
-                  );
-                })}
-              {/* <Linkedin size={16} />
-              <Twitter size={16} />
-              <Instagram size={16} /> */}
-            </div>
           </div>
         </div>
       </div>

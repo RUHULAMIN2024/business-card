@@ -16,6 +16,8 @@ export const themeSwitch = (theme = "", attributes) =>
           color: "#4527a480",
         };
         draft["width"] = "650px";
+        draft["businessCard"]["height"] = "0px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "80px",
@@ -24,8 +26,11 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["headerAlign"] = "start";
         draft["headerMargin"] = { ...draft.headerMargin, bottom: "0px" };
         draft["isHeaderSep"] = false;
-        draft["headerSep"] = { ...draft.headerSep, width: "20%" };
-
+        draft["headerSep"] = {
+          ...draft.headerSep,
+          width: "50%",
+          color: "#828282",
+        };
         draft["nameTypo"] = {
           fontSize: {
             desktop: 30,
@@ -71,6 +76,8 @@ export const themeSwitch = (theme = "", attributes) =>
           color: "#4527a480",
         };
         draft["width"] = "650px";
+        draft["businessCard"]["height"] = "0px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "80px",
@@ -79,7 +86,11 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["headerAlign"] = "end";
         draft["headerMargin"] = { ...draft.headerMargin, bottom: "0px" };
         draft["isHeaderSep"] = true;
-        draft["headerSep"] = { ...draft.headerSep, width: "50%" };
+        draft["headerSep"] = {
+          ...draft.headerSep,
+          width: "50%",
+          color: "#828282",
+        };
         draft["nameTypo"] = {
           fontSize: {
             desktop: 30,
@@ -130,6 +141,8 @@ export const themeSwitch = (theme = "", attributes) =>
           vOffset: "10px",
         };
         draft["width"] = "400px";
+        draft["businessCard"]["height"] = "240px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "0px",
@@ -200,6 +213,8 @@ export const themeSwitch = (theme = "", attributes) =>
           vOffset: "10px",
         };
         draft["width"] = "400px";
+        draft["businessCard"]["height"] = "240px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "0px",
@@ -245,6 +260,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
         };
         draft["contactTextColor"] = "";
+
         draft["businessCardStyles"]["company"] = {
           typo: {
             fontSize: {
@@ -276,6 +292,8 @@ export const themeSwitch = (theme = "", attributes) =>
           vOffset: "10px",
         };
         draft["width"] = "400px";
+        draft["businessCard"]["height"] = "240px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "0px",
@@ -346,6 +364,8 @@ export const themeSwitch = (theme = "", attributes) =>
           vOffset: "10px",
         };
         draft["width"] = "400px";
+        draft["businessCard"]["height"] = "240px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "0px",
@@ -416,6 +436,8 @@ export const themeSwitch = (theme = "", attributes) =>
           vOffset: "10px",
         };
         draft["width"] = "400px";
+        draft["businessCard"]["height"] = "240px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "0px",
@@ -486,6 +508,8 @@ export const themeSwitch = (theme = "", attributes) =>
           vOffset: "10px",
         };
         draft["width"] = "400px";
+        draft["businessCard"]["height"] = "0px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "0px",
@@ -551,6 +575,8 @@ export const themeSwitch = (theme = "", attributes) =>
           color: "#4527a480",
         };
         draft["width"] = "600px";
+        draft["businessCard"]["height"] = "0px";
+
         draft["padding"] = {
           ...draft.padding,
           vertical: "30px",
@@ -559,7 +585,11 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["headerAlign"] = "start";
         draft["headerMargin"] = { ...draft.headerMargin, bottom: "30px" };
         draft["isHeaderSep"] = true;
-        draft["headerSep"] = { ...draft.headerSep, width: "20%" };
+        draft["headerSep"] = {
+          ...draft.headerSep,
+          width: "20%",
+          color: "#828282",
+        };
         draft["nameTypo"] = {
           fontSize: {
             desktop: 30,

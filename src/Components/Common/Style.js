@@ -31,8 +31,9 @@ const Style = ({ attributes, id }) => {
     contactTextTypo,
     contactTextColor,
     businessCardStyles,
+    businessCard,
   } = attributes;
-  const { tagline, company, sidebarBg } = businessCardStyles;
+  const { tagline, company, sidebarBg, socialIconColor } = businessCardStyles;
 
   const mainSl = `#${id}`;
   const businessCardSl = `${mainSl} .${prefix}`;
@@ -59,7 +60,12 @@ const Style = ({ attributes, id }) => {
 			text-align: ${alignment};
 		}
 		${businessCardSl}{
-			width: ${["0px", "0%", "0em"].includes(width) ? "auto" : width};
+			width: ${["0px", "0%", "0em", "0rem"].includes(width) ? "auto" : width};
+			height: ${
+        ["0px", "0%", "0em", "0rem"].includes(businessCard?.height)
+          ? "auto"
+          : businessCard?.height
+      };
 			${getBackgroundCSS(background)}
 			padding: ${getSpaceCSS(padding)};
 			${getBorderCSS(border)}
@@ -92,6 +98,9 @@ const Style = ({ attributes, id }) => {
 		}
 		${contactsSl} .text{
 			color: ${contactTextColor};
+		}
+		${sidebarSl} .icon{
+			color: ${socialIconColor}
 		}
 		`).replace(/\s+/g, " "),
       }}

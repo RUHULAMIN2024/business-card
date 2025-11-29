@@ -2,22 +2,18 @@ import { __ } from "@wordpress/i18n";
 
 import {
   PanelBody,
-  PanelRow,
   SelectControl,
   TextControl,
   __experimentalUnitControl as UnitControl,
 } from "@wordpress/components";
 
-import {
-  Label,
-  HelpPanel,
-  ItemsPanel,
-} from "../../../../../../bpl-tools/Components";
+import { HelpPanel, ItemsPanel } from "../../../../../../bpl-tools/Components";
 
 import {
   pxUnit,
   perUnit,
   emUnit,
+  remUnit,
 } from "../../../../../../bpl-tools/utils/options";
 
 import { themeOptions } from "../../../../utils/options";
@@ -28,7 +24,6 @@ import SocialItemSetting from "./SocialItemSetting";
 const General = ({
   attributes,
   setAttributes,
-  device,
   activeIndex,
   setActiveIndex,
   socialActiveIndex,
@@ -86,24 +81,32 @@ const General = ({
             })
           }
         />
-        <TextControl
-          label="Tagline"
-          value={businessCard?.tagline}
-          onChange={(v) =>
-            setAttributes({
-              businessCard: updateData(businessCard, v, "tagline"),
-            })
-          }
-        />
-        <TextControl
-          label="Company"
-          value={businessCard?.company}
-          onChange={(v) =>
-            setAttributes({
-              businessCard: updateData(businessCard, v, "company"),
-            })
-          }
-        />
+        {theme === "theme3" && (
+          <TextControl
+            label="Tagline"
+            value={businessCard?.tagline}
+            onChange={(v) =>
+              setAttributes({
+                businessCard: updateData(businessCard, v, "tagline"),
+              })
+            }
+          />
+        )}
+        {(theme === "theme3" ||
+          theme === "theme4" ||
+          theme === "theme5" ||
+          theme === "theme6" ||
+          theme === "theme7") && (
+          <TextControl
+            label="Company"
+            value={businessCard?.company}
+            onChange={(v) =>
+              setAttributes({
+                businessCard: updateData(businessCard, v, "company"),
+              })
+            }
+          />
+        )}
       </PanelBody>
 
       <PanelBody
@@ -125,26 +128,28 @@ const General = ({
         />
       </PanelBody>
 
-      <PanelBody
-        initialOpen={false}
-        className="bPlPanelBody"
-        title={__("Socials", "business-card")}
-      >
-        <ItemsPanel
-          {...{ attributes, setAttributes }}
-          arrKey="socials"
-          activeIndex={socialActiveIndex}
-          setActiveIndex={socialActiveIndex}
-          newItem={{
-            icon: { class: "fa-solid fa-link" },
-            link: "https://example.com",
-          }}
-          ItemSettings={SocialItemSetting}
-          design="sortable"
-          // title="name"
-          itemLabel="Social"
-        />
-      </PanelBody>
+      {theme === "theme3" && (
+        <PanelBody
+          initialOpen={false}
+          className="bPlPanelBody"
+          title={__("Socials", "business-card")}
+        >
+          <ItemsPanel
+            {...{ attributes, setAttributes }}
+            arrKey="socials"
+            activeIndex={socialActiveIndex}
+            setActiveIndex={setSocialActiveIndex}
+            newItem={{
+              icon: { class: "fa-solid fa-link" },
+              link: "https://example.com",
+            }}
+            ItemSettings={SocialItemSetting}
+            design="sortable"
+            // title="name"
+            itemLabel="Social"
+          />
+        </PanelBody>
+      )}
 
       <PanelBody
         className="bPlPanelBody"
@@ -156,9 +161,24 @@ const General = ({
           labelPosition="left"
           value={width}
           onChange={(val) => setAttributes({ width: val })}
-          units={[pxUnit(), perUnit(), emUnit()]}
+          units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
         />
-        <small>{__("Keep width 0, to auto width.", "business-card")}</small>
+        {/* <small>{__("Keep width 0, to auto width.", "business-card")}</small> */}
+        <UnitControl
+          className="mt15"
+          label={__("Height:", "business-card")}
+          labelPosition="left"
+          value={businessCard?.height}
+          onChange={(v) =>
+            setAttributes({
+              businessCard: updateData(businessCard, v, "height"),
+            })
+          }
+          units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
+        />
+        <small>
+          {__("Keep width & height 0 to auto size.", "business-card")}
+        </small>
       </PanelBody>
     </>
   );
