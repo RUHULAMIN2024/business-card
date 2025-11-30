@@ -1141,7 +1141,6 @@ const Theme3Editor = ({
     contacts,
     secondaryColor,
     theme = "",
-    isHeaderSep,
     businessCard,
     socials
   } = attributes;
@@ -1277,7 +1276,7 @@ const Theme4Editor = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bg-circle"
+    className: "circle circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bcb-card-content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1376,8 +1375,6 @@ const Theme5Editor = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "circle-2"
@@ -1436,7 +1433,7 @@ const Theme5Editor = ({
       placeholder: "Contact info",
       inlineToolbar: true
     }));
-  })))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme5Editor);
 
@@ -1477,8 +1474,6 @@ const Theme6Editor = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "card-sidebar",
     style: {
       backgroundColor: businessCard?.primary_color
@@ -1488,9 +1483,9 @@ const Theme6Editor = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bg-circles"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "c1"
+    className: "circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "c2"
+    className: "circle-2"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "initial"
   }, (name || "Y")[0].toUpperCase()))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1548,7 +1543,7 @@ const Theme6Editor = ({
       placeholder: "Contact info",
       inlineToolbar: true
     }));
-  })))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme6Editor);
 
@@ -1588,8 +1583,6 @@ const Theme7Editor = ({
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "circle circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1649,7 +1642,7 @@ const Theme7Editor = ({
       placeholder: "Contact info",
       inlineToolbar: true
     }));
-  })))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme7Editor);
 
@@ -1685,25 +1678,17 @@ const Theme8Editor = ({
     title,
     contacts,
     theme = "",
-    businessCard,
     primaryColor,
-    secondaryColor,
     textColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_2__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main theme8"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "tilt-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "tilt-inner"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "top-gradient"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content"
+    className: "bcb-card-content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "info-box"
+    className: "header"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     tagName: "h3",
     className: "name",
@@ -1755,7 +1740,7 @@ const Theme8Editor = ({
       placeholder: "Contact info",
       inlineToolbar: true
     }));
-  })))))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme8Editor);
 
@@ -1777,7 +1762,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
 /* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/data */ "./src/utils/data.js");
 
-// import { escapeHTML } from '../../../../bpl-tools/utils/functions';
 
 
 
@@ -1809,6 +1793,8 @@ const Style = ({
     tagline,
     company,
     sidebarBg,
+    circle1Color,
+    circle2Color,
     socialIconColor
   } = businessCardStyles;
   const mainSl = `#${id}`;
@@ -1843,6 +1829,13 @@ const Style = ({
 		}
 		${sidebarSl}{
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(sidebarBg)}
+		}
+
+		${businessCardSl} .circle-1{
+			background:${circle1Color}
+		}
+		${businessCardSl} .circle-2{
+			background:${circle2Color}
 		}
 		${headerSl}{
 			justify-items: ${headerAlign};
@@ -2192,7 +2185,7 @@ const Theme4 = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bg-circle"
+    className: "circle circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bcb-card-content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -2268,8 +2261,6 @@ const Theme5 = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "circle-2"
@@ -2310,7 +2301,7 @@ const Theme5 = ({
         __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
       }
     }));
-  })))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme5);
 
@@ -2346,8 +2337,6 @@ const Theme6 = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "card-sidebar",
     style: {
       backgroundColor: businessCard?.primary_color
@@ -2357,9 +2346,9 @@ const Theme6 = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bg-circles"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "c1"
+    className: "circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "c2"
+    className: "circle-2"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "initial"
   }, (name || "Y")[0].toUpperCase()))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -2399,7 +2388,7 @@ const Theme6 = ({
         __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
       }
     }));
-  })))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme6);
 
@@ -2434,8 +2423,6 @@ const Theme7 = ({
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "circle circle-1"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -2477,7 +2464,7 @@ const Theme7 = ({
         __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
       }
     }));
-  })))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme7);
 
@@ -2516,20 +2503,14 @@ const Theme8 = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `${_utils_data__WEBPACK_IMPORTED_MODULE_1__.prefix} ${theme}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bcb-card-main theme8"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "tilt-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "tilt-inner"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "top-gradient",
     style: {
       background: `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content"
+    className: "bcb-card-content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "info-box"
+    className: "header"
   }, name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "name",
     dangerouslySetInnerHTML: {
@@ -2545,14 +2526,6 @@ const Theme8 = ({
     },
     style: {
       color: primaryColor
-    }
-  }), businessCard?.company && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "company",
-    dangerouslySetInnerHTML: {
-      __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(businessCard.company)
-    },
-    style: {
-      color: secondaryColor
     }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "contacts"
@@ -2578,7 +2551,7 @@ const Theme8 = ({
         __html: (0,_bpl_tools_utils_common__WEBPACK_IMPORTED_MODULE_2__.escapeHTML)(text)
       }
     }));
-  })))))));
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Theme8);
 

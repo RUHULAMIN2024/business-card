@@ -154,9 +154,9 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["headerSep"] = { ...draft.headerSep, width: "50%" };
         draft["nameTypo"] = {
           fontSize: {
-            desktop: 22,
-            tablet: 22,
-            mobile: 22,
+            desktop: "1.5rem",
+            tablet: "1.5rem",
+            mobile: "1.5rem",
           },
           fontWeight: 700,
           textTransform: "",
@@ -164,11 +164,10 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["nameColor"] = "#fff";
         draft["titleTypo"] = {
           fontSize: {
-            desktop: 13,
-            tablet: 13,
-            mobile: 13,
+            desktop: "0.875rem",
+            tablet: "0.875rem",
+            mobile: "0.875rem",
           },
-          fontWeight: 400,
         };
         draft["titleColor"] = "#fff";
         draft["contactIconColors"] = {
@@ -183,12 +182,27 @@ export const themeSwitch = (theme = "", attributes) =>
           },
         };
         draft["contactTextColor"] = "#fff";
+        draft["businessCardStyles"]["sidebarBg"] = {
+          color: "#1e40af",
+        };
+        draft["businessCardStyles"]["tagline"] = {
+          typo: {
+            fontSize: {
+              desktop: "0.75rem",
+              tablet: "",
+              mobile: "",
+            },
+            fontStyle: "italic",
+          },
+          color: "#fff",
+        };
+
         draft["businessCardStyles"]["company"] = {
           typo: {
             fontSize: {
-              desktop: 12,
-              tablet: 12,
-              mobile: 12,
+              desktop: "0.75rem",
+              tablet: "",
+              mobile: "",
             },
             fontWeight: 600,
           },
@@ -202,7 +216,7 @@ export const themeSwitch = (theme = "", attributes) =>
           color: "#f9fafb",
         };
         draft["border"] = {
-          radius: "16px",
+          radius: "16px", //12
         };
         draft["shadow"] = {
           blur: "25px",
@@ -259,8 +273,9 @@ export const themeSwitch = (theme = "", attributes) =>
             mobile: 11,
           },
         };
-        draft["contactTextColor"] = "";
+        draft["contactTextColor"] = "#1f2937";
 
+        draft["businessCardStyles"]["circle1Color"] = "#3b82f61A";
         draft["businessCardStyles"]["company"] = {
           typo: {
             fontSize: {
@@ -334,6 +349,9 @@ export const themeSwitch = (theme = "", attributes) =>
           },
         };
         draft["contactTextColor"] = "#fff";
+        draft["businessCardStyles"]["circle1Color"] = "#ffffff1A";
+        draft["businessCardStyles"]["circle2Color"] = "#1e40af33";
+
         draft["businessCardStyles"]["company"] = {
           typo: {
             fontSize: {
@@ -393,7 +411,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
           fontWeight: 400,
         };
-        draft["titleColor"] = "";
+        draft["titleColor"] = "#3b82f6";
         draft["contactIconColors"] = {
           color: "",
           bg: "",
@@ -405,7 +423,9 @@ export const themeSwitch = (theme = "", attributes) =>
             mobile: 11,
           },
         };
-        draft["contactTextColor"] = "";
+        draft["contactTextColor"] = "#1f2937";
+        draft["businessCardStyles"]["circle1Color"] = "#ffffff33";
+        draft["businessCardStyles"]["circle2Color"] = "#ffffff33";
         draft["businessCardStyles"]["company"] = {
           typo: {
             fontSize: {
@@ -415,7 +435,7 @@ export const themeSwitch = (theme = "", attributes) =>
             },
             fontWeight: 600,
           },
-          color: "",
+          color: "#666",
         };
 
         break;
@@ -454,7 +474,6 @@ export const themeSwitch = (theme = "", attributes) =>
             mobile: 22,
           },
           fontWeight: 700,
-          textTransform: "",
         };
         draft["nameColor"] = "";
         draft["titleTypo"] = {
@@ -465,7 +484,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
           fontWeight: 400,
         };
-        draft["titleColor"] = "";
+        draft["titleColor"] = "#3b82f6";
         draft["contactIconColors"] = {
           color: "",
           bg: "",
@@ -477,7 +496,9 @@ export const themeSwitch = (theme = "", attributes) =>
             mobile: 11,
           },
         };
-        draft["contactTextColor"] = "";
+        draft["contactTextColor"] = "#1f2937";
+        draft["businessCardStyles"]["circle1Color"] = "#3b82f633";
+        draft["businessCardStyles"]["circle2Color"] = "#1e40af4d";
         draft["businessCardStyles"]["company"] = {
           typo: {
             fontSize: {
@@ -487,7 +508,7 @@ export const themeSwitch = (theme = "", attributes) =>
             },
             fontWeight: 600,
           },
-          color: "",
+          color: "#555",
         };
 
         break;
@@ -549,18 +570,7 @@ export const themeSwitch = (theme = "", attributes) =>
             mobile: 11,
           },
         };
-        draft["contactTextColor"] = "";
-        draft["businessCardStyles"]["company"] = {
-          typo: {
-            fontSize: {
-              desktop: 12,
-              tablet: 12,
-              mobile: 12,
-            },
-            fontWeight: 600,
-          },
-          color: "",
-        };
+        draft["contactTextColor"] = "#1f2937";
 
         break;
 

@@ -1,4 +1,3 @@
-// import { escapeHTML } from '../../../../bpl-tools/utils/functions';
 import { escapeHTML } from "../../../../bpl-tools/utils/common";
 import {
   getBackgroundCSS,
@@ -33,7 +32,14 @@ const Style = ({ attributes, id }) => {
     businessCardStyles,
     businessCard,
   } = attributes;
-  const { tagline, company, sidebarBg, socialIconColor } = businessCardStyles;
+  const {
+    tagline,
+    company,
+    sidebarBg,
+    circle1Color,
+    circle2Color,
+    socialIconColor,
+  } = businessCardStyles;
 
   const mainSl = `#${id}`;
   const businessCardSl = `${mainSl} .${prefix}`;
@@ -73,6 +79,13 @@ const Style = ({ attributes, id }) => {
 		}
 		${sidebarSl}{
 			${getBackgroundCSS(sidebarBg)}
+		}
+
+		${businessCardSl} .circle-1{
+			background:${circle1Color}
+		}
+		${businessCardSl} .circle-2{
+			background:${circle2Color}
 		}
 		${headerSl}{
 			justify-items: ${headerAlign};

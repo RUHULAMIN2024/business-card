@@ -64,8 +64,49 @@
   margin: 0;
   text-align: left;
 }
+.wp-block-business-card .theme3 .bcb-card-content .contacts,
+.wp-block-business-card .theme4 .bcb-card-content .contacts,
+.wp-block-business-card .theme5 .bcb-card-content .contacts,
+.wp-block-business-card .theme6 .bcb-card-content .contacts,
+.wp-block-business-card .theme7 .bcb-card-content .contacts,
+.wp-block-business-card .theme8 .bcb-card-content .contacts {
+  font-size: 12px;
+}
+.wp-block-business-card .theme3 .bcb-card-content .contacts .contact,
+.wp-block-business-card .theme4 .bcb-card-content .contacts .contact,
+.wp-block-business-card .theme5 .bcb-card-content .contacts .contact,
+.wp-block-business-card .theme6 .bcb-card-content .contacts .contact,
+.wp-block-business-card .theme7 .bcb-card-content .contacts .contact,
+.wp-block-business-card .theme8 .bcb-card-content .contacts .contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+.wp-block-business-card .theme3 .bcb-card-content .contacts .contact .icon,
+.wp-block-business-card .theme4 .bcb-card-content .contacts .contact .icon,
+.wp-block-business-card .theme5 .bcb-card-content .contacts .contact .icon,
+.wp-block-business-card .theme6 .bcb-card-content .contacts .contact .icon,
+.wp-block-business-card .theme7 .bcb-card-content .contacts .contact .icon,
+.wp-block-business-card .theme8 .bcb-card-content .contacts .contact .icon {
+  font-size: 12px;
+  font-style: normal;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+}
+.wp-block-business-card .theme3 .bcb-card-content .contacts .contact .text,
+.wp-block-business-card .theme4 .bcb-card-content .contacts .contact .text,
+.wp-block-business-card .theme5 .bcb-card-content .contacts .contact .text,
+.wp-block-business-card .theme6 .bcb-card-content .contacts .contact .text,
+.wp-block-business-card .theme7 .bcb-card-content .contacts .contact .text,
+.wp-block-business-card .theme8 .bcb-card-content .contacts .contact .text {
+  flex: 1;
+}
 .wp-block-business-card .theme3 {
-  height: 240px;
   overflow: hidden;
   display: flex;
   /* Left content area */
@@ -77,51 +118,27 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #fff;
 }
 .wp-block-business-card .theme3 .bcb-card-content .header .name {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .wp-block-business-card .theme3 .bcb-card-content .header .title {
   opacity: 0.9;
   margin-bottom: 8px;
 }
 .wp-block-business-card .theme3 .bcb-card-content .header .tagline {
-  font-size: 0.75rem;
-  font-style: italic;
   opacity: 0.8;
   margin: 0px;
-}
-.wp-block-business-card .theme3 .bcb-card-content .contacts .contact {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 8px;
-  cursor: pointer;
-}
-.wp-block-business-card .theme3 .bcb-card-content .contacts .contact .icon {
-  font-size: 12px;
-  font-style: normal;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-}
-.wp-block-business-card .theme3 .bcb-card-content .contacts .contact .text {
-  flex: 1;
 }
 .wp-block-business-card .theme3 .card-sidebar {
   width: 33.33%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  background: #1e40af;
 }
 .wp-block-business-card .theme3 .card-sidebar .sidebar-content {
   text-align: center;
-  padding: 8px;
+  padding: 0 10px;
 }
 .wp-block-business-card .theme3 .card-sidebar .sidebar-content .company {
   width: 100%;
@@ -142,22 +159,16 @@
   text-decoration: none;
 }
 .wp-block-business-card .theme4 {
-  height: 240px;
-  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background: #f9fafb;
   position: relative;
 }
-.wp-block-business-card .theme4 .bg-circle {
-  background: #3b82f6;
+.wp-block-business-card .theme4 .circle-1 {
   position: absolute;
   top: 0;
   right: 0;
   width: 128px;
   height: 128px;
   border-bottom-left-radius: 999px;
-  opacity: 0.1;
 }
 .wp-block-business-card .theme4 .bcb-card-content {
   height: 100%;
@@ -166,7 +177,6 @@
   flex-direction: column;
   justify-content: space-between;
   /* Header section */
-  /* Contacts section */
 }
 .wp-block-business-card .theme4 .bcb-card-content .header {
   position: relative;
@@ -187,120 +197,59 @@
 .wp-block-business-card .theme4 .bcb-card-content .header .company {
   margin: 0;
 }
-.wp-block-business-card .theme4 .bcb-card-content .contacts {
-  position: relative;
-  z-index: 10;
-}
-.wp-block-business-card .theme4 .bcb-card-content .contacts .contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-}
-.wp-block-business-card .theme4 .bcb-card-content .contacts .contact .icon {
-  font-size: 12px;
-  font-style: normal;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-}
-.wp-block-business-card .theme4 .bcb-card-content .contacts .contact .text {
-  flex: 1;
-}
 .wp-block-business-card .theme5 {
   height: 240px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-.wp-block-business-card .theme5 .bcb-card-main {
-  width: 100%;
-  height: 100%;
   position: relative;
   /* Background circles */
   /* Content layer */
 }
-.wp-block-business-card .theme5 .bcb-card-main .circle-1 {
-  position: absolute;
-  right: -32px;
-  bottom: -32px;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  opacity: 0.2;
-  background-color: #1e40af;
-}
-.wp-block-business-card .theme5 .bcb-card-main .circle-2 {
+.wp-block-business-card .theme5 .circle-1 {
   position: absolute;
   right: -64px;
   top: 32px;
   width: 128px;
   height: 128px;
   border-radius: 50%;
-  opacity: 0.1;
-  background-color: #ffffff;
 }
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content {
+.wp-block-business-card .theme5 .circle-2 {
+  position: absolute;
+  right: -32px;
+  bottom: -32px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+.wp-block-business-card .theme5 .bcb-card-content {
   height: 100%;
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /* Header section */
-  /* Contacts section */
 }
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content .header .company {
+.wp-block-business-card .theme5 .bcb-card-content .header .company {
   opacity: 0.9;
   margin-bottom: 12px;
 }
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content .header .name {
+.wp-block-business-card .theme5 .bcb-card-content .header .name {
   margin-bottom: 4px;
 }
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content .header .title {
+.wp-block-business-card .theme5 .bcb-card-content .header .title {
   opacity: 0.9;
-}
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content .contacts {
-  position: relative;
-  z-index: 10;
-}
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content .contacts .contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-}
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content .contacts .contact .icon {
-  font-size: 12px;
-  font-style: normal;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-}
-.wp-block-business-card .theme5 .bcb-card-main .bcb-card-content .contacts .contact .text {
-  flex: 1;
 }
 .wp-block-business-card .theme6 {
   height: 240px;
   overflow: hidden;
   border-radius: 16px;
   background: #fff;
-  /* ===========================
-    LEFT COLOR PANEL
-   ========================== */
+  display: flex;
   /* ===========================
     RIGHT CONTENT AREA
    ========================== */
   /* HEADER */
-  /* CONTACTS */
-}
-.wp-block-business-card .theme6 .bcb-card-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
 }
 .wp-block-business-card .theme6 .card-sidebar {
   width: 128px;
@@ -327,21 +276,20 @@
 .wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles {
   position: absolute;
   inset: 0;
-  opacity: 0.2;
 }
-.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .c1,
-.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .c2 {
+.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .circle-1,
+.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .circle-2 {
   position: absolute;
   background: #fff;
   border-radius: 999px;
 }
-.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .c1 {
+.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .circle-1 {
   top: 16px;
   left: 16px;
   width: 64px;
   height: 64px;
 }
-.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .c2 {
+.wp-block-business-card .theme6 .card-sidebar .sidebar-content .bg-circles .circle-2 {
   bottom: 16px;
   right: 16px;
   width: 48px;
@@ -357,36 +305,17 @@
 .wp-block-business-card .theme6 .header .name {
   margin-bottom: 4px;
   font-weight: 700;
+  margin-bottom: 4px;
 }
 .wp-block-business-card .theme6 .header .title {
   margin-bottom: 4px;
   font-size: 14px;
+  margin-bottom: 4px;
 }
 .wp-block-business-card .theme6 .header .company {
   font-size: 12px;
   opacity: 0.85;
-}
-.wp-block-business-card .theme6 .contacts {
-  font-size: 12px;
-}
-.wp-block-business-card .theme6 .contacts .contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-  cursor: pointer;
-}
-.wp-block-business-card .theme6 .contacts .contact .icon {
-  font-size: 12px;
-  font-style: normal;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-}
-.wp-block-business-card .theme6 .contacts .contact .text {
-  flex: 1;
+  margin: 0;
 }
 .wp-block-business-card .theme7 {
   height: 240px;
@@ -394,18 +323,11 @@
   border-radius: 16px;
   background: #fff;
   position: relative;
-  /* MAIN WRAPPER */
   /* BACKGROUND CIRCLES */
   /* Top-right larger circle */
   /* Bottom-left smaller circle */
   /* CONTENT AREA */
   /* HEADER STYLING */
-  /* CONTACT LIST */
-}
-.wp-block-business-card .theme7 .bcb-card-main {
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
 .wp-block-business-card .theme7 .circle {
   position: absolute;
@@ -413,20 +335,16 @@
   pointer-events: none;
 }
 .wp-block-business-card .theme7 .circle-1 {
-  background: #3b82f6;
   top: -48px;
   right: -48px;
   width: 192px;
   height: 192px;
-  opacity: 0.2;
 }
 .wp-block-business-card .theme7 .circle-2 {
-  background: #1e40af;
   bottom: -32px;
   left: -32px;
   width: 128px;
   height: 128px;
-  opacity: 0.3;
 }
 .wp-block-business-card .theme7 .bcb-card-content {
   position: relative;
@@ -448,97 +366,44 @@
   font-weight: 600;
 }
 .wp-block-business-card .theme7 .header .company {
+  margin: 0px;
   font-size: 12px;
   opacity: 0.75;
 }
-.wp-block-business-card .theme7 .contacts {
-  font-size: 12px;
-}
-.wp-block-business-card .theme7 .contacts .contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-  cursor: pointer;
-}
-.wp-block-business-card .theme7 .contacts .contact .icon {
-  font-size: 12px;
-  font-style: normal;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-}
-.wp-block-business-card .theme7 .contacts .contact .text {
-  flex: 1;
-}
-.wp-block-business-card .theme8 .tilt-wrapper {
-  transform: rotate(1deg);
-  height: 100%;
-}
-.wp-block-business-card .theme8 .tilt-wrapper .tilt-inner {
-  transform: rotate(-1deg);
-  height: 100%;
-  background: #fff;
-  border-radius: 26px;
+.wp-block-business-card .theme8 {
   overflow: hidden;
-  position: relative;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
 }
 .wp-block-business-card .theme8 .top-gradient {
   height: 80px;
   width: 100%;
   background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
 }
-.wp-block-business-card .theme8 .content {
+.wp-block-business-card .theme8 .bcb-card-content {
   padding: 24px;
-  margin-top: -48px;
+  margin-top: -56px;
   position: relative;
   z-index: 10;
   text-align: left;
 }
-.wp-block-business-card .theme8 .content .info-box {
+.wp-block-business-card .theme8 .bcb-card-content .header {
   background: #fff;
   border-radius: 20px;
   padding: 16px;
   margin-bottom: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-.wp-block-business-card .theme8 .content .info-box .name {
-  margin: 0;
+.wp-block-business-card .theme8 .bcb-card-content .header .name {
+  margin-bottom: 4px;
   font-size: 22px;
   font-weight: 700;
 }
-.wp-block-business-card .theme8 .content .info-box .title {
+.wp-block-business-card .theme8 .bcb-card-content .header .title {
   font-size: 14px;
   margin-bottom: 2px;
 }
-.wp-block-business-card .theme8 .content .info-box .company {
+.wp-block-business-card .theme8 .bcb-card-content .header .company {
   font-size: 12px;
   opacity: 0.8;
-}
-.wp-block-business-card .theme8 .content .contacts {
-  font-size: 12px;
-}
-.wp-block-business-card .theme8 .content .contacts .contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-  cursor: pointer;
-}
-.wp-block-business-card .theme8 .content .contacts .contact .icon {
-  font-size: 12px;
-  font-style: normal;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-}
-.wp-block-business-card .theme8 .content .contacts .contact .text {
-  flex: 1;
 }
 
 /*# sourceMappingURL=view.css.map*/

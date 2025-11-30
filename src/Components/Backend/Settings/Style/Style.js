@@ -41,7 +41,14 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
     contactTextColor,
     businessCardStyles,
   } = attributes;
-  const { tagline, company, sidebarBg, socialIconColor } = businessCardStyles;
+  const {
+    tagline,
+    company,
+    sidebarBg,
+    circle1Color,
+    circle2Color,
+    socialIconColor,
+  } = businessCardStyles;
   return (
     <>
       <PanelBody className="bPlPanelBody" title={__("Card", "business-card")}>
@@ -88,6 +95,42 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           onChange={(val) => setAttributes({ shadow: val })}
           defaults={{ blur: "10px", color: "#4527a480" }}
         />
+
+        {(theme === "theme4" ||
+          theme === "theme5" ||
+          theme === "theme6" ||
+          theme === "theme7") && (
+          <>
+            <ColorControl
+              label={__("Circle1 Color:", "business-card")}
+              value={circle1Color}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "circle1Color"
+                  ),
+                })
+              }
+            />
+            {theme !== "theme4" && (
+              <ColorControl
+                label={__("Circle2 Color:", "business-card")}
+                value={circle2Color}
+                onChange={(v) =>
+                  setAttributes({
+                    businessCardStyles: updateData(
+                      businessCardStyles,
+                      v,
+                      "circle2Color"
+                    ),
+                  })
+                }
+              />
+            )}
+          </>
+        )}
       </PanelBody>
 
       <PanelBody
@@ -163,7 +206,6 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
                 })
               }
             />
-
             <ColorControl
               label={__("Tagline Color:", "business-card")}
               value={tagline.color}
@@ -178,6 +220,14 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
                 })
               }
             />
+          </>
+        )}
+        {(theme === "theme3" ||
+          theme === "theme4" ||
+          theme === "theme5" ||
+          theme === "theme6" ||
+          theme === "theme7") && (
+          <>
             <Typography
               className="mt15"
               label={__("Company Typography:", "business-card")}

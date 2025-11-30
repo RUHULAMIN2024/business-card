@@ -16,7 +16,6 @@ const Theme3Editor = ({
     contacts,
     secondaryColor,
     theme = "",
-    isHeaderSep,
     businessCard,
     socials,
   } = attributes;

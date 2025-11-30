@@ -228,6 +228,8 @@
         "sidebarBg": {
           "color": "#1e40af"
         },
+        "circle1Color": "#3b82f61A",
+        "circle2Color": "#fff",
         "socialIconColor": "#fff"
       }
     }

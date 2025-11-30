@@ -19,7 +19,7 @@ const Theme4Editor = ({
 
   return (
     <div className={`${prefix} ${theme}`}>
-      <div className="bg-circle"></div>
+      <div className="circle circle-1"></div>
       <div className="bcb-card-content">
         {/* Header Section */}
         <div className="header">

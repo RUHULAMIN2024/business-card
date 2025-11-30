@@ -82,67 +82,22 @@ $primaryColor: #4527a4;
     }
   }
 
-  .theme3 {
-    // width: 400px;
-    height: 240px;
-    // border-radius: 16px;
-    overflow: hidden;
-    // box-shadow: 0 10px 25px #00000033;
-    display: flex;
-
-    /* Left content area */
+  .theme3,
+  .theme4,
+  .theme5,
+  .theme6,
+  .theme7,
+  .theme8 {
     .bcb-card-content {
-      width: 66.66%;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #fff;
-
-      .header {
-        .name {
-          // font-size: 22px;
-          // font-weight: 700;
-          margin-bottom: 6px;
-          // background: transparent;
-          // border: none;
-          // color: inherit;
-          // width: 100%;
-        }
-
-        .title {
-          // font-size: 13px;
-          opacity: 0.9;
-          margin-bottom: 8px;
-          // background: transparent;
-          // border: none;
-          // color: inherit;
-          // width: 100%;
-        }
-        .tagline {
-          font-size: 0.75rem;
-          font-style: italic;
-          opacity: 0.8;
-          margin: 0px;
-        }
-
-        // .separator {
-        //   display: block;
-        //   width: 40px;
-        //   height: 2px;
-        //   background: rgba(255, 255, 255, 0.5);
-        //   margin-top: 6px;
-        // }
-      }
-
       .contacts {
-        // font-size: 11px;
+        font-size: 12px;
 
         .contact {
           display: flex;
           align-items: center;
-          gap: 6px;
-          margin-top: 8px;
+          gap: 8px;
+          margin-top: 6px;
+
           cursor: pointer;
 
           .icon {
@@ -155,8 +110,36 @@ $primaryColor: #4527a4;
 
           .text {
             flex: 1;
-            // font-size: 11px;
           }
+        }
+      }
+    }
+  }
+
+  .theme3 {
+    overflow: hidden;
+    display: flex;
+
+    /* Left content area */
+    .bcb-card-content {
+      width: 66.66%;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .header {
+        .name {
+          margin-bottom: 4px;
+        }
+
+        .title {
+          opacity: 0.9;
+          margin-bottom: 8px;
+        }
+        .tagline {
+          opacity: 0.8;
+          margin: 0px;
         }
       }
     }
@@ -167,12 +150,10 @@ $primaryColor: #4527a4;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      background: #1e40af;
 
       .sidebar-content {
         text-align: center;
-        padding: 8px;
+        padding: 0 10px;
 
         .company {
           width: 100%;
@@ -201,22 +182,16 @@ $primaryColor: #4527a4;
   }
 
   .theme4 {
-    height: 240px;
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    background: #f9fafb;
     position: relative;
 
-    .bg-circle {
-      background: #3b82f6;
+    .circle-1 {
       position: absolute;
       top: 0;
       right: 0;
       width: 128px;
       height: 128px;
       border-bottom-left-radius: 999px;
-      opacity: 0.1;
     }
 
     .bcb-card-content {
@@ -232,14 +207,12 @@ $primaryColor: #4527a4;
         z-index: 10;
 
         .name {
-          font-size: 22px; // text-2xl
-          font-weight: 700; // font-bold
-          margin-bottom: 4px; // mb-1
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 4px;
         }
 
         .separator {
-          // height: 4px;
-          // width: 64px;
           border-radius: 4px;
           margin-bottom: 8px;
         }
@@ -257,32 +230,6 @@ $primaryColor: #4527a4;
           margin: 0;
         }
       }
-
-      /* Contacts section */
-      .contacts {
-        position: relative;
-        z-index: 10;
-        // font-size: 12px;
-
-        .contact {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          margin-top: 6px;
-
-          .icon {
-            font-size: 12px;
-            font-style: normal;
-            width: fit-content;
-            height: fit-content;
-            padding: 0;
-          }
-
-          .text {
-            flex: 1;
-          }
-        }
-      }
     }
   }
 
@@ -291,88 +238,57 @@ $primaryColor: #4527a4;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
 
-    .bcb-card-main {
-      width: 100%;
+    /* Background circles */
+
+    .circle-1 {
+      position: absolute;
+      right: -64px; // -right-16
+      top: 32px; // top-8
+      width: 128px; // w-32
+      height: 128px; // h-32
+      border-radius: 50%;
+      // opacity: 0.1;
+      // background-color: #ffffff;
+    }
+    .circle-2 {
+      position: absolute;
+      right: -32px; // -right-8
+      bottom: -32px; // -bottom-8
+      width: 160px; // w-40
+      height: 160px; // h-40
+      border-radius: 50%;
+      // opacity: 0.2;
+      // background-color: #1e40af;
+    }
+
+    /* Content layer */
+    .bcb-card-content {
       height: 100%;
-      position: relative;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-      /* Background circles */
-      .circle-1 {
-        position: absolute;
-        right: -32px; // -right-8
-        bottom: -32px; // -bottom-8
-        width: 160px; // w-40
-        height: 160px; // h-40
-        border-radius: 50%;
-        opacity: 0.2;
-        background-color: #1e40af;
-      }
-
-      .circle-2 {
-        position: absolute;
-        right: -64px; // -right-16
-        top: 32px; // top-8
-        width: 128px; // w-32
-        height: 128px; // h-32
-        border-radius: 50%;
-        opacity: 0.1;
-        background-color: #ffffff;
-      }
-
-      /* Content layer */
-      .bcb-card-content {
-        height: 100%;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        /* Header section */
-        .header {
-          .company {
-            // font-size: 12px;
-            // font-weight: 600;
-            opacity: 0.9;
-            margin-bottom: 12px; // mb-3
-          }
-
-          .name {
-            // font-size: 22px;
-            // font-weight: 700;
-            margin-bottom: 4px;
-          }
-
-          .title {
-            // font-size: 14px;
-            opacity: 0.9;
-          }
+      /* Header section */
+      .header {
+        .company {
+          // font-size: 12px;
+          // font-weight: 600;
+          opacity: 0.9;
+          margin-bottom: 12px; // mb-3
         }
 
-        /* Contacts section */
-        .contacts {
-          position: relative;
-          z-index: 10;
-          // font-size: 12px;
+        .name {
+          // font-size: 22px;
+          // font-weight: 700;
+          margin-bottom: 4px;
+        }
 
-          .contact {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 6px;
-
-            .icon {
-              font-size: 12px;
-              font-style: normal;
-              width: fit-content;
-              height: fit-content;
-              padding: 0;
-            }
-
-            .text {
-              flex: 1;
-            }
-          }
+        .title {
+          // font-size: 14px;
+          opacity: 0.9;
         }
       }
     }
@@ -384,16 +300,8 @@ $primaryColor: #4527a4;
     overflow: hidden;
     border-radius: 16px;
     background: #fff;
+    display: flex;
 
-    .bcb-card-main {
-      width: 100%;
-      height: 100%;
-      display: flex;
-    }
-
-    /* ===========================
-      LEFT COLOR PANEL
-     ========================== */
     .card-sidebar {
       width: 128px; // w-32
 
@@ -420,23 +328,23 @@ $primaryColor: #4527a4;
         .bg-circles {
           position: absolute;
           inset: 0;
-          opacity: 0.2;
+          // opacity: 0.2;
 
-          .c1,
-          .c2 {
+          .circle-1,
+          .circle-2 {
             position: absolute;
             background: #fff;
             border-radius: 999px;
           }
 
-          .c1 {
+          .circle-1 {
             top: 16px;
             left: 16px;
             width: 64px;
             height: 64px;
           }
 
-          .c2 {
+          .circle-2 {
             bottom: 16px;
             right: 16px;
             width: 48px;
@@ -462,42 +370,19 @@ $primaryColor: #4527a4;
       .name {
         margin-bottom: 4px;
         font-weight: 700;
+        margin-bottom: 4px;
       }
 
       .title {
         margin-bottom: 4px;
         font-size: 14px;
+        margin-bottom: 4px;
       }
 
       .company {
         font-size: 12px;
         opacity: 0.85;
-      }
-    }
-
-    /* CONTACTS */
-    .contacts {
-      font-size: 12px;
-
-      .contact {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 6px;
-
-        cursor: pointer;
-
-        .icon {
-          font-size: 12px;
-          font-style: normal;
-          width: fit-content;
-          height: fit-content;
-          padding: 0;
-        }
-
-        .text {
-          flex: 1;
-        }
+        margin: 0;
       }
     }
   }
@@ -509,13 +394,6 @@ $primaryColor: #4527a4;
     background: #fff;
     position: relative;
 
-    /* MAIN WRAPPER */
-    .bcb-card-main {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
     /* BACKGROUND CIRCLES */
     .circle {
       position: absolute;
@@ -525,23 +403,23 @@ $primaryColor: #4527a4;
 
     /* Top-right larger circle */
     .circle-1 {
-      background: #3b82f6;
+      // background: #3b82f6;
       top: -48px;
       right: -48px;
       width: 192px;
       height: 192px;
-      opacity: 0.2;
+      // opacity: 0.2;
     }
 
     /* Bottom-left smaller circle */
     .circle-2 {
-      background: #1e40af;
+      // background: #1e40af;
 
       bottom: -32px;
       left: -32px;
       width: 128px;
       height: 128px;
-      opacity: 0.3;
+      // opacity: 0.3;
     }
 
     /* CONTENT AREA */
@@ -549,7 +427,7 @@ $primaryColor: #4527a4;
       position: relative;
       z-index: 10;
       height: 100%;
-      padding: 24px; // p-6
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -570,67 +448,28 @@ $primaryColor: #4527a4;
       }
 
       .company {
+        margin: 0px;
         font-size: 12px;
         opacity: 0.75;
       }
     }
-
-    /* CONTACT LIST */
-    .contacts {
-      font-size: 12px;
-
-      .contact {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 6px;
-
-        cursor: pointer;
-
-        .icon {
-          font-size: 12px;
-          font-style: normal;
-          width: fit-content;
-          height: fit-content;
-          padding: 0;
-        }
-
-        .text {
-          flex: 1;
-        }
-      }
-    }
   }
   .theme8 {
-    .tilt-wrapper {
-      transform: rotate(1deg);
-      height: 100%;
-
-      .tilt-inner {
-        transform: rotate(-1deg);
-        height: 100%;
-        background: #fff;
-        border-radius: 26px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
-      }
-    }
-
+    overflow: hidden;
     .top-gradient {
       height: 80px;
       width: 100%;
       background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
     }
 
-    .content {
+    .bcb-card-content {
       padding: 24px;
-      margin-top: -48px;
+      margin-top: -56px;
       position: relative;
       z-index: 10;
       text-align: left;
 
-      .info-box {
+      .header {
         background: #fff;
         border-radius: 20px;
         padding: 16px;
@@ -638,7 +477,7 @@ $primaryColor: #4527a4;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
         .name {
-          margin: 0;
+          margin-bottom: 4px;
           font-size: 22px;
           font-weight: 700;
         }
@@ -651,31 +490,6 @@ $primaryColor: #4527a4;
         .company {
           font-size: 12px;
           opacity: 0.8;
-        }
-      }
-
-      .contacts {
-        font-size: 12px;
-
-        .contact {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          margin-top: 6px;
-
-          cursor: pointer;
-
-          .icon {
-            font-size: 12px;
-            font-style: normal;
-            width: fit-content;
-            height: fit-content;
-            padding: 0;
-          }
-
-          .text {
-            flex: 1;
-          }
         }
       }
     }
