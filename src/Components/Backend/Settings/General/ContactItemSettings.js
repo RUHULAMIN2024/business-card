@@ -1,8 +1,9 @@
 import { __ } from "@wordpress/i18n";
-import { TextControl } from "@wordpress/components";
+import { SelectControl, TextControl } from "@wordpress/components";
 
 import { IconControl } from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../../../bpl-tools/utils/functions";
+import { contactTypeOptions } from "../../../../utils/options";
 
 const ContactItemSettings = ({
   attributes,
@@ -12,7 +13,7 @@ const ContactItemSettings = ({
   setActiveIndex = false,
 }) => {
   const items = attributes[arrKey];
-  const { icon = {}, text } = items[index];
+  const { type, icon = {}, text } = items[index];
 
   const updateContact = (val, ...props) => {
     setAttributes({ [arrKey]: updateData(items, val, index, ...props) });
@@ -22,6 +23,13 @@ const ContactItemSettings = ({
 
   return (
     <>
+      <SelectControl
+        label={"Type:"}
+        // labelPosition="left"
+        value={type}
+        options={contactTypeOptions}
+        onChange={(val) => updateContact(val, "type")}
+      />
       <IconControl
         value={icon}
         onChange={(val) => updateContact(val, "icon")}

@@ -89,6 +89,7 @@ $primaryColor: #4527a4;
   .theme7,
   .theme8 {
     .bcb-card-content {
+      padding: 24px;
       .contacts {
         font-size: 12px;
 
@@ -118,10 +119,13 @@ $primaryColor: #4527a4;
 
   .theme3 {
     overflow: hidden;
-    display: flex;
+    display: inline-flex;
+    position: relative;
 
     /* Left content area */
     .bcb-card-content {
+      min-height: inherit;
+
       width: 66.66%;
       padding: 24px;
       display: flex;
@@ -157,14 +161,13 @@ $primaryColor: #4527a4;
 
         .company {
           width: 100%;
-          // font-size: 12px;
-          // font-weight: 600;
           margin-bottom: 8px;
           text-align: center;
         }
 
         .social-icons {
           display: flex;
+          flex-wrap: wrap;
           gap: 8px;
           justify-content: center;
 
@@ -196,6 +199,7 @@ $primaryColor: #4527a4;
 
     .bcb-card-content {
       height: 100%;
+      min-height: inherit;
       padding: 24px;
       display: flex;
       flex-direction: column;
@@ -203,12 +207,9 @@ $primaryColor: #4527a4;
 
       /* Header section */
       .header {
-        position: relative;
         z-index: 10;
 
         .name {
-          font-size: 22px;
-          font-weight: 700;
           margin-bottom: 4px;
         }
 
@@ -218,15 +219,10 @@ $primaryColor: #4527a4;
         }
 
         .title {
-          // font-size: 14px;
-          // color: #4b5563;
           margin-bottom: 4px;
         }
 
         .company {
-          // font-size: 12px;
-          // font-weight: 600;
-          // line-height: 1.2;
           margin: 0;
         }
       }
@@ -234,60 +230,46 @@ $primaryColor: #4527a4;
   }
 
   .theme5 {
-    height: 240px;
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     position: relative;
-
-    /* Background circles */
 
     .circle-1 {
       position: absolute;
-      right: -64px; // -right-16
-      top: 32px; // top-8
-      width: 128px; // w-32
-      height: 128px; // h-32
+      right: -64px;
+      top: 32px;
+      width: 128px;
+      height: 128px;
       border-radius: 50%;
-      // opacity: 0.1;
-      // background-color: #ffffff;
     }
     .circle-2 {
       position: absolute;
-      right: -32px; // -right-8
-      bottom: -32px; // -bottom-8
-      width: 160px; // w-40
-      height: 160px; // h-40
+      right: -32px;
+      bottom: -32px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      // opacity: 0.2;
-      // background-color: #1e40af;
     }
 
-    /* Content layer */
     .bcb-card-content {
       height: 100%;
+      min-height: inherit;
+
       padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      /* Header section */
       .header {
         .company {
-          // font-size: 12px;
-          // font-weight: 600;
           opacity: 0.9;
-          margin-bottom: 12px; // mb-3
+          margin-bottom: 12px;
         }
 
         .name {
-          // font-size: 22px;
-          // font-weight: 700;
           margin-bottom: 4px;
         }
 
         .title {
-          // font-size: 14px;
           opacity: 0.9;
         }
       }
@@ -295,15 +277,11 @@ $primaryColor: #4527a4;
   }
 
   .theme6 {
-    // width: 400px;
-    height: 240px;
     overflow: hidden;
-    border-radius: 16px;
-    background: #fff;
-    display: flex;
+    display: inline-flex;
 
     .card-sidebar {
-      width: 128px; // w-32
+      width: 128px;
 
       .sidebar-content {
         display: flex;
@@ -317,23 +295,13 @@ $primaryColor: #4527a4;
         z-index: 10;
         text-align: center;
 
-        /* User Initial */
-        .initial {
-          font-size: 48px;
-          font-weight: 700;
-          color: #fff;
-        }
-
-        /* Background Circles */
         .bg-circles {
           position: absolute;
           inset: 0;
-          // opacity: 0.2;
 
           .circle-1,
           .circle-2 {
             position: absolute;
-            background: #fff;
             border-radius: 999px;
           }
 
@@ -354,12 +322,12 @@ $primaryColor: #4527a4;
       }
     }
 
-    /* ===========================
-      RIGHT CONTENT AREA
-     ========================== */
     .bcb-card-content {
       flex: 1;
       padding: 24px;
+      min-height: inherit;
+      height: 100%;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -369,63 +337,47 @@ $primaryColor: #4527a4;
     .header {
       .name {
         margin-bottom: 4px;
-        font-weight: 700;
-        margin-bottom: 4px;
       }
 
       .title {
         margin-bottom: 4px;
-        font-size: 14px;
-        margin-bottom: 4px;
       }
 
       .company {
-        font-size: 12px;
         opacity: 0.85;
         margin: 0;
       }
     }
   }
   .theme7 {
-    // width: 400px;
-    height: 240px;
     overflow: hidden;
-    border-radius: 16px;
-    background: #fff;
     position: relative;
 
-    /* BACKGROUND CIRCLES */
     .circle {
       position: absolute;
       border-radius: 999px;
       pointer-events: none;
     }
 
-    /* Top-right larger circle */
     .circle-1 {
-      // background: #3b82f6;
       top: -48px;
       right: -48px;
       width: 192px;
       height: 192px;
-      // opacity: 0.2;
     }
 
-    /* Bottom-left smaller circle */
     .circle-2 {
-      // background: #1e40af;
-
       bottom: -32px;
       left: -32px;
       width: 128px;
       height: 128px;
-      // opacity: 0.3;
     }
 
     /* CONTENT AREA */
     .bcb-card-content {
-      position: relative;
       z-index: 10;
+      min-height: inherit;
+
       height: 100%;
       padding: 24px;
       display: flex;
@@ -436,33 +388,30 @@ $primaryColor: #4527a4;
     /* HEADER STYLING */
     .header {
       .name {
-        font-size: 22px;
-        font-weight: 700;
         margin-bottom: 4px;
       }
 
       .title {
         margin-bottom: 4px;
-        font-size: 14px;
-        font-weight: 600;
       }
 
       .company {
         margin: 0px;
-        font-size: 12px;
         opacity: 0.75;
       }
     }
   }
   .theme8 {
     overflow: hidden;
-    .top-gradient {
+    .top-bg {
       height: 80px;
       width: 100%;
-      background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
     }
 
     .bcb-card-content {
+      height: 100%;
+      min-height: inherit;
+
       padding: 24px;
       margin-top: -56px;
       position: relative;
@@ -470,26 +419,10 @@ $primaryColor: #4527a4;
       text-align: left;
 
       .header {
-        background: #fff;
-        border-radius: 20px;
-        padding: 16px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 36px;
 
         .name {
           margin-bottom: 4px;
-          font-size: 22px;
-          font-weight: 700;
-        }
-
-        .title {
-          font-size: 14px;
-          margin-bottom: 2px;
-        }
-
-        .company {
-          font-size: 12px;
-          opacity: 0.8;
         }
       }
     }

@@ -1,6 +1,11 @@
 import { __ } from "@wordpress/i18n";
 
-import { PanelBody, PanelRow, ToggleControl } from "@wordpress/components";
+import {
+  PanelBody,
+  PanelRow,
+  ToggleControl,
+  __experimentalUnitControl as UnitControl,
+} from "@wordpress/components";
 
 import {
   Label,
@@ -10,6 +15,7 @@ import {
   ColorsControl,
   SeparatorControl,
   Typography,
+  BoxControl,
 } from "../../../../../../bpl-tools/Components";
 import {
   BorderControl,
@@ -19,10 +25,15 @@ import {
 
 import { aligns } from "../../../../utils/options";
 import { updateData } from "../../../../../../bpl-tools/utils/functions";
+import {
+  emUnit,
+  perUnit,
+  pxUnit,
+  remUnit,
+} from "../../../../../../bpl-tools/utils/options";
 
 const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
   const {
-    width,
     theme,
     background,
     padding,
@@ -39,16 +50,24 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
     contactIconColors,
     contactTextTypo,
     contactTextColor,
+    businessCard,
     businessCardStyles,
   } = attributes;
   const {
+    header,
     tagline,
     company,
+    leftLetter,
+    topBg,
     sidebarBg,
     circle1Color,
     circle2Color,
     socialIconColor,
+    contactIconSize,
+    socialIconSize,
+    downloadBtn,
   } = businessCardStyles;
+
   return (
     <>
       <PanelBody className="bPlPanelBody" title={__("Card", "business-card")}>
@@ -58,7 +77,7 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           onChange={(val) => setAttributes({ background: val })}
           defaults={{ color: "#0000" }}
         />
-        {theme === "theme3" && (
+        {(theme === "theme3" || theme === "theme6") && (
           <Background
             label={__("Sidebar Background:", "business-card")}
             value={sidebarBg}
@@ -71,7 +90,19 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
                 ),
               })
             }
-            defaults={{ color: "#0000" }}
+            defaults={{ color: "#1e40af" }}
+          />
+        )}
+        {theme === "theme8" && (
+          <Background
+            label={__("Top Background:", "business-card")}
+            value={topBg}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(businessCardStyles, v, "topBg"),
+              })
+            }
+            defaults={{ color: "#3b82f6" }}
           />
         )}
 
@@ -155,6 +186,70 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           onChange={(val) => setAttributes({ headerMargin: val })}
           defaults={{ side: 4, bottom: "30px" }}
         />
+        {theme === "theme8" && (
+          <>
+            <SpaceControl
+              className="mt15"
+              label={__("Padding:", "business-card")}
+              value={header?.padding}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "header",
+                    "padding"
+                  ),
+                })
+              }
+            />
+            <Background
+              label={__("Background:", "business-card")}
+              value={header.background}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "header",
+                    "background"
+                  ),
+                })
+              }
+              defaults={{ color: "#fff" }}
+            />
+
+            <BorderControl
+              label={__("Border:", "business-card")}
+              value={header?.border}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "header",
+                    "border"
+                  ),
+                })
+              }
+            />
+
+            <ShadowControl
+              label={__("Shadow:", "business-card")}
+              value={header?.shadow}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "header",
+                    "shadow"
+                  ),
+                })
+              }
+            />
+          </>
+        )}
 
         <Typography
           className="mt15"
@@ -261,6 +356,41 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           </>
         )}
 
+        {theme === "theme6" && (
+          <>
+            <Typography
+              className="mt15"
+              label={__("Left Letter Typography:", "business-card")}
+              value={leftLetter.typo}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "leftLetter",
+                    "typo"
+                  ),
+                })
+              }
+            />
+
+            <ColorControl
+              label={__("Left Letter Color:", "business-card")}
+              value={leftLetter.color}
+              onChange={(v) =>
+                setAttributes({
+                  businessCardStyles: updateData(
+                    businessCardStyles,
+                    v,
+                    "leftLetter",
+                    "color"
+                  ),
+                })
+              }
+            />
+          </>
+        )}
+
         {(theme === "default" ||
           theme === "theme1" ||
           theme === "theme2" ||
@@ -294,6 +424,21 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
         title={__("Contact", "business-card")}
         initialOpen={false}
       >
+        <UnitControl
+          label={__("Icon Size:", "business-card")}
+          labelPosition="left"
+          value={contactIconSize}
+          onChange={(v) =>
+            setAttributes({
+              businessCardStyles: updateData(
+                businessCardStyles,
+                v,
+                "contactIconSize"
+              ),
+            })
+          }
+          units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
+        />
         {theme === "default" || theme === "theme1" || theme === "theme2" ? (
           <ColorsControl
             label={__("Icon Colors", "business-card")}
@@ -337,6 +482,21 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           title={__("Social Icons", "business-card")}
           initialOpen={false}
         >
+          <UnitControl
+            label={__("Icon Size:", "business-card")}
+            labelPosition="left"
+            value={socialIconSize}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "socialIconSize"
+                ),
+              })
+            }
+            units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
+          />
           <ColorControl
             label={__("Color", "business-card")}
             value={socialIconColor}
@@ -350,6 +510,79 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
               })
             }
             defaultColor="#fff"
+          />
+        </PanelBody>
+      )}
+      {businessCard?.isDownloadBtn && (
+        <PanelBody
+          className="bPlPanelBody"
+          title={__("Download Button", "business-card")}
+          initialOpen={false}
+        >
+          <Typography
+            label={__("Typography:", "business-card")}
+            value={downloadBtn?.typo}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "downloadBtn",
+                  "typo"
+                ),
+              })
+            }
+            defaults={{
+              fontSize: { desktop: 15, tablet: 15, mobile: 15 },
+              fontWeight: 500,
+            }}
+          />
+          <ColorsControl
+            className={"mt15"}
+            label={__("Colors", "business-card")}
+            value={downloadBtn?.colors}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "downloadBtn",
+                  "colors"
+                ),
+              })
+            }
+            defaults={{ color: "#fff", bg: "#4527a4" }}
+          />
+
+          <BorderControl
+            className={"mt15"}
+            label={__("Border & Radius:", "business-card")}
+            value={downloadBtn?.border}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "downloadBtn",
+                  "border"
+                ),
+              })
+            }
+          />
+          <BoxControl
+            className={"mt15"}
+            label={__("Padding:", "business-card")}
+            values={downloadBtn?.padding}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "downloadBtn",
+                  "padding"
+                ),
+              })
+            }
           />
         </PanelBody>
       )}

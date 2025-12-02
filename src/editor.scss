@@ -10,8 +10,8 @@
 
   button {
     border: none;
-    background: rgb(69, 39, 164);
-    color: rgb(255, 255, 255);
+    background: #4527a4;
+    color: #ffffff;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,8 +22,8 @@
     transition: 0.3s;
 
     &:hover {
-      background: rgb(69, 39, 164);
-      color: rgb(255, 255, 255);
+      background: #4527a4;
+      color: #ffffff;
     }
   }
 }

@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('react', 'react-dom'), 'version' => 'a28498200008c67896f1');
+<?php return array('dependencies' => array('react', 'react-dom'), 'version' => 'a9ac4ee402b88828c6a4');

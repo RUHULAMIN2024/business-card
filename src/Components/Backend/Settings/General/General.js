@@ -4,6 +4,7 @@ import {
   PanelBody,
   SelectControl,
   TextControl,
+  ToggleControl,
   __experimentalUnitControl as UnitControl,
 } from "@wordpress/components";
 
@@ -56,6 +57,47 @@ const General = ({
             "Some settings will be change when you will change the Theme.",
             "portfolio-block"
           )}
+        />
+      </PanelBody>
+      <PanelBody
+        className="bPlPanelBody"
+        title={__("Layout Settings", "business-card")}
+        initialOpen={true}
+      >
+        <UnitControl
+          label={__("Width:", "business-card")}
+          labelPosition="left"
+          value={width}
+          onChange={(val) => setAttributes({ width: val })}
+          units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
+        />
+        <small>{__("Keep width 0, to auto width.", "business-card")}</small>
+        <UnitControl
+          className="mt15"
+          label={__("Min-Height:", "business-card")}
+          labelPosition="left"
+          value={businessCard?.height}
+          onChange={(v) =>
+            setAttributes({
+              businessCard: updateData(businessCard, v, "height"),
+            })
+          }
+          units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
+        />
+        <small>{__("Keep Height 0, to auto Height.", "business-card")}</small>
+
+        {/* <small>
+          {__("Keep width & height 0 to auto size.", "business-card")}
+        </small> */}
+        <ToggleControl
+          className="mt15"
+          label={__("Show/Hide Download Button", "business-card")}
+          checked={businessCard?.isDownloadBtn}
+          onChange={(v) =>
+            setAttributes({
+              businessCard: updateData(businessCard, v, "isDownloadBtn"),
+            })
+          }
         />
       </PanelBody>
       <PanelBody
@@ -112,10 +154,12 @@ const General = ({
       <PanelBody
         className="bPlPanelBody"
         title={__("Contacts", "business-card")}
+        initialOpen={false}
       >
         <ItemsPanel
           {...contactItemProps}
           newItem={{
+            type: "",
             icon: {
               class: "fas fa-globe",
             },
@@ -150,36 +194,6 @@ const General = ({
           />
         </PanelBody>
       )}
-
-      <PanelBody
-        className="bPlPanelBody"
-        title={__("Layout Settings", "business-card")}
-        initialOpen={false}
-      >
-        <UnitControl
-          label={__("Width:", "business-card")}
-          labelPosition="left"
-          value={width}
-          onChange={(val) => setAttributes({ width: val })}
-          units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
-        />
-        {/* <small>{__("Keep width 0, to auto width.", "business-card")}</small> */}
-        <UnitControl
-          className="mt15"
-          label={__("Height:", "business-card")}
-          labelPosition="left"
-          value={businessCard?.height}
-          onChange={(v) =>
-            setAttributes({
-              businessCard: updateData(businessCard, v, "height"),
-            })
-          }
-          units={[pxUnit(), perUnit(), emUnit(), remUnit()]}
-        />
-        <small>
-          {__("Keep width & height 0 to auto size.", "business-card")}
-        </small>
-      </PanelBody>
     </>
   );
 };

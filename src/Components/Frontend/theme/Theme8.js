@@ -7,21 +7,14 @@ const Theme8 = ({ attributes }) => {
     title,
     contacts,
     theme = "",
-    businessCard,
     primaryColor,
-    secondaryColor,
     textColor,
   } = attributes;
 
   return (
     <div className={`${prefix} ${theme}`}>
       {/* Gradient Top Bar */}
-      <div
-        className="top-gradient"
-        style={{
-          background: `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-        }}
-      ></div>
+      <div className="top-bg"></div>
 
       <div className="bcb-card-content">
         {/* Name Box */}

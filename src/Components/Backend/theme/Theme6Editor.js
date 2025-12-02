@@ -13,17 +13,14 @@ const Theme6Editor = ({
   return (
     <div className={`${prefix} ${theme}`}>
       {/* Left Color Panel */}
-      <div
-        className="card-sidebar"
-        style={{ backgroundColor: businessCard?.primary_color }}
-      >
+      <div className="card-sidebar">
         <div className="sidebar-content">
           <div className="bg-circles">
             <span className="circle-1"></span>
             <span className="circle-2"></span>
           </div>
 
-          <div className="initial">{(name || "Y")[0].toUpperCase()}</div>
+          <div className="left-letter">{(name || "Y")[0].toUpperCase()}</div>
         </div>
       </div>
 

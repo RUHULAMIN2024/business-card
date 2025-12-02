@@ -1,5 +1,5 @@
 === Business Card Block – Display Business or Personal Info in Card Format ===
-Contributors: bplugins, abuhayat, charlescormier, ruhulamin2026
+Contributors: bplugins, abuhayat, charlescormier, ruhulamin2026, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, business, card, address card, Gutenberg block
 Requires at least: 6.5+
@@ -98,9 +98,22 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Screenshots ==
+1. Admin Dashboard 
+2. Add New Item (ShortCode)
+3. Default
+4. Theme 1
+5. Theme 2
+6. Theme 3
+7. Theme 4
+8. Theme 5
+9. Theme 6
+10. Theme 7
+11. Theme 8	
+12. Gutenberg Block Settings 1
+13. Gutenberg Block Settings 2
+14. Gutenberg Block Settings 3
 
-1. Settings
-2. Business Card
+—
 
 
 == Changelog ==

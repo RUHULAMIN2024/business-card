@@ -16,7 +16,6 @@ import { useState } from "react";
 import General from "./General/General";
 import Style from "./Style/Style";
 import BlockPreview from "../../../utils/BlockPreveiw/BlockPreview ";
-// import { themeSwitch } from "../../../utils/functions";
 
 import { tabController } from "../../../../../bpl-tools/utils/functions";
 import { themeSwitch } from "../../../utils/functions";

@@ -20,7 +20,7 @@ const Theme8Editor = ({
   return (
     <div className={`${prefix} ${theme}`}>
       {/* Gradient Top Bar */}
-      <div className="top-gradient"></div>
+      <div className="top-bg"></div>
 
       <div className="bcb-card-content">
         {/* Name Box */}
@@ -32,7 +32,6 @@ const Theme8Editor = ({
             onChange={(val) => setAttributes({ name: val })}
             placeholder="Your Name"
             inlineToolbar
-            style={{ color: textColor }}
           />
 
           <RichText
@@ -42,7 +41,6 @@ const Theme8Editor = ({
             onChange={(val) => setAttributes({ title: val })}
             placeholder="Job Title"
             inlineToolbar
-            style={{ color: primaryColor }}
           />
         </div>
 

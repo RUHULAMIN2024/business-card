@@ -7,10 +7,7 @@ const Theme6 = ({ attributes }) => {
   return (
     <div className={`${prefix} ${theme}`}>
       {/* Left Color Panel */}
-      <div
-        className="card-sidebar"
-        style={{ backgroundColor: businessCard?.primary_color }}
-      >
+      <div className="card-sidebar">
         <div className="sidebar-content">
           <div className="bg-circles">
             <span className="circle-1"></span>

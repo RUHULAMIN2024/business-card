@@ -57,7 +57,8 @@ if ( function_exists( 'bcb_fs' ) ) {
 						),
 					);
 
-					$bcb_fs = fs_dynamic_init( $bcbConfig );
+					$bcb_fs = BCB_HAS_PRO ? fs_dynamic_init( $bcbConfig ):fs_lite_dynamic_init($bcbConfig);
+
 				}
 
 				return $bcb_fs;

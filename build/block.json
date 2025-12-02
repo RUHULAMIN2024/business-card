@@ -2,6 +2,7 @@
   "apiVersion": 2,
   "name": "business/card",
   "title": "Business Card",
+  "version": "1.0.6",
   "description": "Show your business card in web.",
   "category": "widgets",
   "keywords": [
@@ -29,24 +30,28 @@
       "type": "array",
       "default": [
         {
+          "type": "address",
           "icon": {
             "class": "fas fa-map-marker-alt"
           },
           "text": "Your Address, State, City, Country, 0000"
         },
         {
+          "type": "phone",
           "icon": {
             "class": "fas fa-phone-alt"
           },
           "text": "+000 0000-00000"
         },
         {
+          "type": "email",
           "icon": {
             "class": "fas fa-envelope"
           },
           "text": "example@mail.com"
         },
         {
+          "type": "website",
           "icon": {
             "class": "fas fa-globe"
           },
@@ -197,12 +202,34 @@
       "default": {
         "tagline": "Building the future, one line at a time",
         "company": "Tech Crop",
-        "height": ""
+        "height": "0px",
+        "isDownloadBtn": true
       }
     },
     "businessCardStyles": {
       "type": "object",
       "default": {
+        "header": {
+          "background": {
+            "color": "#fff"
+          },
+          "padding": {
+            "vertical": "16px",
+            "horizontal": "16px"
+          },
+          "border": {
+            "radius": "20px"
+          },
+          "shadow": {
+            "blur": "20px",
+            "color": "#0000001a",
+            "hOffset": "0px",
+            "isInset": false,
+            "spreed": "",
+            "vOffset": "4px"
+          }
+        },
+        "contactIconSize": "18px",
         "tagline": {
           "typo": {
             "fontSize": {
@@ -225,12 +252,50 @@
           },
           "color": "#fff"
         },
+        "leftLetter": {
+          "typo": {
+            "fontSize": {
+              "desktop": "48px",
+              "tablet": "",
+              "mobile": ""
+            },
+            "fontWeight": 700
+          },
+          "color": "#fff"
+        },
+        "topBg": {
+          "color": "linear-gradient(90deg, #3b82f6 0%, #1e40af 100%)"
+        },
         "sidebarBg": {
           "color": "#1e40af"
         },
+        "socialIconSize": "12px",
         "circle1Color": "#3b82f61A",
         "circle2Color": "#fff",
-        "socialIconColor": "#fff"
+        "socialIconColor": "#fff",
+        "downloadBtn": {
+          "padding": {
+            "top": "8px",
+            "right": "20px",
+            "bottom": "8px",
+            "left": "20px"
+          },
+          "border": {
+            "radius": "5px"
+          },
+          "typo": {
+            "fontSize": {
+              "desktop": "15px",
+              "tablet": "",
+              "mobile": ""
+            },
+            "fontWeight": 500
+          },
+          "colors": {
+            "color": "#fff",
+            "bg": "#4527a4"
+          }
+        }
       }
     }
   },

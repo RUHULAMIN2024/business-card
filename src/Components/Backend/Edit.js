@@ -9,6 +9,7 @@ import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import { prefix } from "../../utils/data";
 import Theme from "../Common/theme/theme";
+import { downloadVCard, generateVCard } from "../../utils/vcard";
 
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device, postType, postId } =
@@ -18,7 +19,8 @@ const Edit = (props) => {
   const [socialActiveIndex, setSocialActiveIndex] = useState(0);
   const isPremium = Boolean(bcbIsPremium);
 
-  const { name, title, contacts, theme, isHeaderSep } = attributes;
+  const { name, title, contacts, theme, isHeaderSep, businessCard } =
+    attributes;
 
   const id = `${prefix}-${clientId}`;
 
@@ -42,7 +44,6 @@ const Edit = (props) => {
         setActiveIndex={setActiveIndex}
         updateContact={updateContact}
       />
-
       <div {...useBlockProps()} id={id}>
         <Style device={device} attributes={attributes} id={id} />
         {postType == "bcb" && <ClipBoard shortcode={`[bcb id=${postId}]`} />}
@@ -58,59 +59,21 @@ const Edit = (props) => {
           setAttributes={setAttributes}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
+          updateContact={updateContact}
         />
-
-        {/* <div className={`${prefix} ${theme}`}>
-          <div className="header">
-            <RichText
-              className="name"
-              tagName="h3"
-              value={name}
-              onChange={(val) => setAttributes({ name: val })}
-              placeholder={__("Person Name", "business-card")}
-              inlineToolbar
-            />
-
-            <RichText
-              className="title"
-              tagName="p"
-              value={title}
-              onChange={(val) => setAttributes({ title: val })}
-              placeholder={__("Person Name", "business-card")}
-              inlineToolbar
-            />
-
-            {isHeaderSep && <span className="separator"></span>}
+        {businessCard?.isDownloadBtn && (
+          <div>
+            <button
+              className="bcb-download-btn"
+              onClick={() => {
+                const vcardText = generateVCard(attributes);
+                downloadVCard(vcardText, `${attributes.name || "vcard"}.vcf`);
+              }}
+            >
+              Download vCard
+            </button>
           </div>
-
-          <div className="contacts">
-            {contacts?.length &&
-              contacts.map((contact, index) => {
-                const { icon, text } = contact;
-
-                return (
-                  <div
-                    key={index}
-                    className={`contact ${
-                      index === activeIndex ? "bPlNowEditing" : ""
-                    }`}
-                    onClick={() => setActiveIndex(index)}
-                  >
-                    {icon?.class && <i className={`icon ${icon?.class}`}></i>}
-
-                    <RichText
-                      className="text"
-                      tagName="p"
-                      value={text}
-                      onChange={(val) => updateContact(index, val, "text")}
-                      placeholder={__("Text", "icon-list")}
-                      inlineToolbar
-                    />
-                  </div>
-                );
-              })}
-          </div>
-        </div> */}
+        )}
       </div>
     </>
   );

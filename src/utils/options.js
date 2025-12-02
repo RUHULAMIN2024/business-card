@@ -1,9 +1,11 @@
 import { __ } from "@wordpress/i18n";
 
-export const themes = [
-  { label: __("Default", "business-card"), value: "default" },
-  { label: __("Theme 1", "business-card"), value: "theme1" },
-  { label: __("Theme 2", "business-card"), value: "theme2" },
+export const contactTypeOptions = [
+  { label: __("Address", "business-card"), value: "address" },
+  { label: __("Phone", "business-card"), value: "phone" },
+  { label: __("Email", "business-card"), value: "email" },
+  { label: __("Website", "business-card"), value: "website" },
+  { label: __("Others", "business-card"), value: "others" },
 ];
 
 export const aligns = [

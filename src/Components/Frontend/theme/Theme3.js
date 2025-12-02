@@ -8,7 +8,6 @@ const Theme3 = ({ attributes }) => {
     contacts,
     secondaryColor,
     theme = "",
-    isHeaderSep,
     businessCard,
     socials,
   } = attributes;
