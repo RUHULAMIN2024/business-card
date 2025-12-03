@@ -161,7 +161,7 @@ const Settings = ({
             <li style={{ marginBottom: "6px" }}>
               <strong>{__("Fully Customizable:", "portfolio-block")}</strong>{" "}
               {__(
-                "All the options you need to arrange your portfolio just the way you like.",
+                "All the options you need to arrange your Business Card just the way you like.",
                 "portfolio-block"
               )}
             </li>

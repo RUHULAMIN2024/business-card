@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   businessCardEls.forEach((businessCardEl) => {
     const attributes = JSON.parse(businessCardEl.dataset.attributes);
 
+    const isPremium = Boolean(businessCardEl.dataset.bcbispremium);
+
+    const proThemes = ["theme4", "theme5", "theme6", "theme7", "theme8"];
+    const activeTheme = attributes?.theme;
+
+    const showOverlay = !isPremium && proThemes.includes(activeTheme);
+
+    const siteLocation = `/wp-admin/edit.php?post_type=bcb&page=bcb-dashboard#/pricing`;
+
     createRoot(businessCardEl).render(
       <>
         <Style attributes={attributes} id={businessCardEl.id} />
@@ -25,6 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
             >
               Download vCard
             </button>
+          </div>
+        )}
+        {showOverlay && (
+          <div className="pro-overlay">
+            <div className="overlay-inner">
+              <h3>🔒 Premium Theme</h3>
+              <p>You need a Pro license to activate this theme.</p>
+              <a
+                href={siteLocation}
+                rel="noreferrer"
+                target="_blank"
+                className="upgrade-btn"
+              >
+                Get Pro License
+              </a>
+            </div>
           </div>
         )}
       </>

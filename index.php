@@ -101,5 +101,5 @@ if ( function_exists( 'bcb_fs' ) ) {
 			new BCBPlugin();
 		}
 		require_once BCB_DIR_PATH . 'includes/admin/CPT.php';
-	require_once(BCB_DIR_PATH . 'includes/admin/Menu.php');
+		require_once(BCB_DIR_PATH . 'includes/admin/Menu.php');
     }

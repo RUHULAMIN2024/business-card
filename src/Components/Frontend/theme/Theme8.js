@@ -2,14 +2,7 @@ import { prefix } from "../../../utils/data";
 import { escapeHTML } from "../../../../../bpl-tools/utils/common";
 
 const Theme8 = ({ attributes }) => {
-  const {
-    name,
-    title,
-    contacts,
-    theme = "",
-    primaryColor,
-    textColor,
-  } = attributes;
+  const { name, title, contacts, theme = "" } = attributes;
 
   return (
     <div className={`${prefix} ${theme}`}>
@@ -23,7 +16,6 @@ const Theme8 = ({ attributes }) => {
             <h3
               className="name"
               dangerouslySetInnerHTML={{ __html: escapeHTML(name) }}
-              style={{ color: textColor }}
             />
           )}
 
@@ -31,7 +23,6 @@ const Theme8 = ({ attributes }) => {
             <p
               className="title"
               dangerouslySetInnerHTML={{ __html: escapeHTML(title) }}
-              style={{ color: primaryColor }}
             />
           )}
         </div>
@@ -43,16 +34,15 @@ const Theme8 = ({ attributes }) => {
               const { icon, text } = contact;
 
               return (
-                <div
-                  key={index}
-                  className="contact"
-                  style={{ color: textColor }}
-                >
-                  {icon?.class && (
-                    <i
-                      className={`icon ${icon.class}`}
-                      style={{ color: primaryColor }}
-                    ></i>
+                <div key={index} className="contact">
+                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
+                  {icon?.svg ? (
+                    <span
+                      className="icon"
+                      dangerouslySetInnerHTML={{ __html: icon?.svg }}
+                    />
+                  ) : (
+                    <i className={`icon ${icon?.class}`}></i>
                   )}
 
                   {text && (

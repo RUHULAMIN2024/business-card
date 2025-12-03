@@ -73,7 +73,15 @@ const Theme3Editor = ({
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {icon?.class && <i className={`icon ${icon?.class}`}></i>}
+                  {/* {icon?.class && <i className={`icon ${icon?.class}`}></i>} */}
+                  {icon?.svg ? (
+                    <span
+                      className="icon"
+                      dangerouslySetInnerHTML={{ __html: icon?.svg }}
+                    />
+                  ) : (
+                    <i className={`icon ${icon?.class}`}></i>
+                  )}
 
                   <RichText
                     className="text"
@@ -108,7 +116,7 @@ const Theme3Editor = ({
           <div className="social-icons">
             {socials?.length &&
               socials.map((social, index) => {
-                const { icon, link } = social;
+                const { icon } = social;
 
                 return (
                   <div
@@ -118,7 +126,11 @@ const Theme3Editor = ({
                     }`}
                     onClick={() => setSocialActiveIndex(index)}
                   >
-                    {icon?.class && <i className={`icon ${icon.class}`}></i>}
+                    {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
+                    <span
+                      className="icon"
+                      dangerouslySetInnerHTML={{ __html: icon }}
+                    />
                   </div>
                 );
               })}

@@ -58,11 +58,14 @@ const Theme8Editor = ({
                   onClick={() => setActiveIndex(index)}
                   style={{ color: textColor }}
                 >
-                  {icon?.class && (
-                    <i
-                      className={`icon ${icon.class}`}
-                      style={{ color: primaryColor }}
-                    ></i>
+                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
+                  {icon?.svg ? (
+                    <span
+                      className="icon"
+                      dangerouslySetInnerHTML={{ __html: icon?.svg }}
+                    />
+                  ) : (
+                    <i className={`icon ${icon?.class}`}></i>
                   )}
 
                   <RichText

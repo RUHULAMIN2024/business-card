@@ -196,7 +196,7 @@ export const pricingInfo = {
     },
   ],
   features: [
-    "Fully Customizable — all the options you need to arrange your portfolio just the way you like.",
+    "Fully Customizable — all the options you need to arrange your Business Card just the way you like.",
   ],
 
   button: {

@@ -156,9 +156,9 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["headerSep"] = { ...draft.headerSep, width: "50%" };
         draft["nameTypo"] = {
           fontSize: {
-            desktop: "1.5rem",
-            tablet: "1.5rem",
-            mobile: "1.5rem",
+            desktop: 22,
+            tablet: 22,
+            mobile: 22,
           },
           fontWeight: 700,
           textTransform: "",
@@ -166,10 +166,11 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["nameColor"] = "#fff";
         draft["titleTypo"] = {
           fontSize: {
-            desktop: "0.875rem",
-            tablet: "0.875rem",
-            mobile: "0.875rem",
+            desktop: 13,
+            tablet: 13,
+            mobile: 13,
           },
+          fontWeight: 400,
         };
         draft["titleColor"] = "#fff";
         draft["contactIconColors"] = {
@@ -256,16 +257,16 @@ export const themeSwitch = (theme = "", attributes) =>
           fontWeight: 700,
           textTransform: "",
         };
-        draft["nameColor"] = "";
+        draft["nameColor"] = "#1f2937";
         draft["titleTypo"] = {
           fontSize: {
-            desktop: 14,
-            tablet: 14,
-            mobile: 14,
+            desktop: 13,
+            tablet: 13,
+            mobile: 13,
           },
           fontWeight: 400,
         };
-        draft["titleColor"] = "#4b5563";
+        draft["titleColor"] = "#3b82f6";
         draft["contactIconColors"] = {
           color: "",
           bg: "",
@@ -495,6 +496,7 @@ export const themeSwitch = (theme = "", attributes) =>
             mobile: 22,
           },
           fontWeight: 700,
+          textTransform: "",
         };
         draft["nameColor"] = "";
         draft["titleTypo"] = {

@@ -1,7 +1,10 @@
 import { __ } from "@wordpress/i18n";
 import { SelectControl, TextControl } from "@wordpress/components";
 
-import { IconControl } from "../../../../../../bpl-tools/Components";
+import {
+  IconControl,
+  IconLibrary,
+} from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../../../bpl-tools/utils/functions";
 import { contactTypeOptions } from "../../../../utils/options";
 
@@ -13,7 +16,7 @@ const ContactItemSettings = ({
   setActiveIndex = false,
 }) => {
   const items = attributes[arrKey];
-  const { type, icon = {}, text } = items[index];
+  const { type, icon, text } = items[index];
 
   const updateContact = (val, ...props) => {
     setAttributes({ [arrKey]: updateData(items, val, index, ...props) });
@@ -30,12 +33,19 @@ const ContactItemSettings = ({
         options={contactTypeOptions}
         onChange={(val) => updateContact(val, "type")}
       />
-      <IconControl
+      {/* <IconControl
         value={icon}
         onChange={(val) => updateContact(val, "icon")}
         defaults={{ class: "fas fa-globe" }}
         isSize={false}
         isColor={false}
+      /> */}
+
+      <IconLibrary
+        value={icon.svg}
+        className="mt10"
+        label="Contact Icon"
+        onChange={(val) => updateContact({ svg: val }, "icon")}
       />
 
       <TextControl

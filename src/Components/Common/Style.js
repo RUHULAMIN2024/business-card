@@ -148,13 +148,21 @@ const Style = ({ attributes, id }) => {
 		${contactsSl} .icon{
 			${getColorsCSS(contactIconColors)}
 			font-size:${contactIconSize};
+			
+		}
+		${contactsSl} .icon svg{
+			width:${contactIconSize};
+			height:${contactIconSize};
+			fill:${contactIconColors.color};
+			
 		}
 		${contactsSl} .text{
 			color: ${contactTextColor};
 		}
-		${sidebarSl} .icon{
-			color: ${socialIconColor};
-			font-size:${socialIconSize};
+		${sidebarSl} .icon svg{
+			fill: ${socialIconColor};
+			width:${socialIconSize};
+			height:${socialIconSize};
 
 		}
 		`).replace(/\s+/g, " "),

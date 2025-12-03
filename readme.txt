@@ -112,6 +112,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 12. Gutenberg Block Settings 1
 13. Gutenberg Block Settings 2
 14. Gutenberg Block Settings 3
+15. Gutenberg Block Settings 4
 
 —
 

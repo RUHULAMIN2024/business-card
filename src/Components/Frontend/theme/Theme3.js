@@ -52,7 +52,15 @@ const Theme3 = ({ attributes }) => {
 
               return (
                 <div key={index} className="contact">
-                  {icon?.class && <i className={`icon ${icon.class}`}></i>}
+                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
+                  {icon?.svg ? (
+                    <span
+                      className="icon"
+                      dangerouslySetInnerHTML={{ __html: icon?.svg }}
+                    />
+                  ) : (
+                    <i className={`icon ${icon?.class}`}></i>
+                  )}
 
                   <p
                     className="text"
@@ -91,7 +99,11 @@ const Theme3 = ({ attributes }) => {
                         target={openInNewTab ? "_blank" : ""}
                         rel="noopener noreferrer"
                       >
-                        <i className={`icon ${icon.class}`}></i>
+                        {/* <i className={`icon ${icon.class}`}></i> */}
+                        <span
+                          className="icon"
+                          dangerouslySetInnerHTML={{ __html: icon }}
+                        />
                       </a>
                     )}
                   </div>

@@ -57,7 +57,15 @@ const Theme6 = ({ attributes }) => {
 
               return (
                 <div key={index} className="contact">
-                  {icon?.class && <i className={`icon ${icon.class}`}></i>}
+                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
+                  {icon?.svg ? (
+                    <span
+                      className="icon"
+                      dangerouslySetInnerHTML={{ __html: icon?.svg }}
+                    />
+                  ) : (
+                    <i className={`icon ${icon?.class}`}></i>
+                  )}
 
                   {text && (
                     <p

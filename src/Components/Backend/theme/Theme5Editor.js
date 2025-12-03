@@ -65,7 +65,15 @@ const Theme5Editor = ({
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {icon?.class && <i className={`icon ${icon.class}`}></i>}
+                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
+                  {icon?.svg ? (
+                    <span
+                      className="icon"
+                      dangerouslySetInnerHTML={{ __html: icon?.svg }}
+                    />
+                  ) : (
+                    <i className={`icon ${icon?.class}`}></i>
+                  )}
 
                   <RichText
                     className="text"
