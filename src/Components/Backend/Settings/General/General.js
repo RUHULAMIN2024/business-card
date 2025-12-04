@@ -55,7 +55,7 @@ const General = ({
           onChange={(val) => setAttributes(themeSwitch(val, attributes))}
           help={__(
             "Some settings will be change when you will change the Theme.",
-            "portfolio-block"
+            "business-card"
           )}
         />
       </PanelBody>

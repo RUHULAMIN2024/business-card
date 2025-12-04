@@ -15,9 +15,7 @@ const Theme3 = ({ attributes }) => {
   return (
     <div className={`${prefix} ${theme}`}>
       <div className="bcb-card-content">
-        {/* Header */}
         <div className="header">
-          {/* Name */}
           {name && (
             <h3
               className="name"
@@ -25,7 +23,6 @@ const Theme3 = ({ attributes }) => {
             />
           )}
 
-          {/* Job Title */}
           {title && (
             <p
               className="title"
@@ -33,7 +30,6 @@ const Theme3 = ({ attributes }) => {
             />
           )}
 
-          {/* Tagline */}
           {businessCard?.tagline && (
             <p
               className="tagline"
@@ -44,7 +40,6 @@ const Theme3 = ({ attributes }) => {
           )}
         </div>
 
-        {/* Contacts */}
         <div className="contacts">
           {contacts?.length > 0 &&
             contacts.map((contact, index) => {
@@ -52,7 +47,6 @@ const Theme3 = ({ attributes }) => {
 
               return (
                 <div key={index} className="contact">
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"
@@ -72,10 +66,8 @@ const Theme3 = ({ attributes }) => {
         </div>
       </div>
 
-      {/* Sidebar */}
       <div className="card-sidebar" style={{ backgroundColor: secondaryColor }}>
         <div className="sidebar-content">
-          {/* Company */}
           {businessCard?.company && (
             <p
               className="company"
@@ -85,7 +77,6 @@ const Theme3 = ({ attributes }) => {
             />
           )}
 
-          {/* Social Icons */}
           <div className="social-icons">
             {socials?.length > 0 &&
               socials.map((social, index) => {
@@ -99,7 +90,6 @@ const Theme3 = ({ attributes }) => {
                         target={openInNewTab ? "_blank" : ""}
                         rel="noopener noreferrer"
                       >
-                        {/* <i className={`icon ${icon.class}`}></i> */}
                         <span
                           className="icon"
                           dangerouslySetInnerHTML={{ __html: icon }}

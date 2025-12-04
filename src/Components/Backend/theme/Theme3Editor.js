@@ -23,7 +23,6 @@ const Theme3Editor = ({
   return (
     <div className={`${prefix} ${theme}`}>
       <div className="bcb-card-content">
-        {/* Header Section */}
         <div className="header">
           <RichText
             className="name"
@@ -59,7 +58,6 @@ const Theme3Editor = ({
           )}
         </div>
 
-        {/* Contacts */}
         <div className="contacts">
           {contacts?.length &&
             contacts.map((contact, index) => {
@@ -73,7 +71,6 @@ const Theme3Editor = ({
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {/* {icon?.class && <i className={`icon ${icon?.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"
@@ -97,7 +94,6 @@ const Theme3Editor = ({
         </div>
       </div>
 
-      {/* Sidebar */}
       <div className="card-sidebar" style={{ backgroundColor: secondaryColor }}>
         <div className="sidebar-content">
           <RichText
@@ -126,7 +122,6 @@ const Theme3Editor = ({
                     }`}
                     onClick={() => setSocialActiveIndex(index)}
                   >
-                    {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                     <span
                       className="icon"
                       dangerouslySetInnerHTML={{ __html: icon }}

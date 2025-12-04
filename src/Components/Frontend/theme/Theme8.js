@@ -35,7 +35,6 @@ const Theme8 = ({ attributes }) => {
 
               return (
                 <div key={index} className="contact">
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"

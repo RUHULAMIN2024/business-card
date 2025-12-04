@@ -48,7 +48,6 @@ const BusinessCardEditor = ({
                 }`}
                 onClick={() => setActiveIndex(index)}
               >
-                {/* {icon?.class && <i className={`icon ${icon?.class}`}></i>} */}
                 {icon?.svg ? (
                   <span
                     className="icon"

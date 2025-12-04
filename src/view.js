@@ -22,25 +22,28 @@ document.addEventListener("DOMContentLoaded", () => {
     createRoot(businessCardEl).render(
       <>
         <Style attributes={attributes} id={businessCardEl.id} />
-        <Theme isEditor={false} attributes={attributes} />{" "}
-        {attributes?.businessCard?.isDownloadBtn && (
-          <div>
-            <button
-              className="bcb-download-btn"
-              onClick={() => {
-                const vcardText = generateVCard(attributes);
-                downloadVCard(vcardText, `${attributes.name || "vcard"}.vcf`);
-              }}
-            >
-              Download vCard
-            </button>
-          </div>
-        )}
+        <div style={{ display: "inline-block" }}>
+          <Theme isEditor={false} attributes={attributes} />{" "}
+          {attributes?.businessCard?.isDownloadBtn && (
+            <div className="bcb-btn-container">
+              <button
+                className="bcb-download-btn"
+                onClick={() => {
+                  const vcardText = generateVCard(attributes);
+                  downloadVCard(vcardText, `${attributes.name || "vcard"}.vcf`);
+                }}
+              >
+                Download vCard
+              </button>
+            </div>
+          )}
+        </div>
+
         {showOverlay && (
           <div className="pro-overlay">
             <div className="overlay-inner">
               <h3>🔒 Premium Theme</h3>
-              <p>You need a Pro license to activate this theme.</p>
+              {/* <p>You need a Pro license to activate this theme.</p> */}
               <a
                 href={siteLocation}
                 rel="noreferrer"

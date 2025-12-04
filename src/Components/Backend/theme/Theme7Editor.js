@@ -12,12 +12,10 @@ const Theme7Editor = ({
 
   return (
     <div className={`${prefix} ${theme}`}>
-      {/* Background Circles */}
       <div className="circle circle-1"></div>
       <div className="circle circle-2"></div>
 
       <div className="bcb-card-content">
-        {/* Header */}
         <div className="header">
           <RichText
             className="name"
@@ -51,7 +49,6 @@ const Theme7Editor = ({
           />
         </div>
 
-        {/* Contacts */}
         <div className="contacts">
           {contacts?.length > 0 &&
             contacts.map((contact, index) => {
@@ -65,8 +62,6 @@ const Theme7Editor = ({
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
-
                   {icon?.svg ? (
                     <span
                       className="icon"

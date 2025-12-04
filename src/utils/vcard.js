@@ -1,5 +1,5 @@
 export function generateVCard(attributes) {
-  const { name = "", title = "", contacts, socials, businessCard } = attributes;
+  const { name = "", title = "", contacts, businessCard } = attributes;
   const company = businessCard.company || "";
 
   let address = "";

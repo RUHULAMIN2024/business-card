@@ -10,12 +10,13 @@
   box-sizing: border-box;
 }
 .wp-block-business-card .pro-overlay {
-  position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 0px;
+  background: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;
   -webkit-backdrop-filter: blur(3px);
@@ -23,20 +24,22 @@
   border-radius: 10px;
   z-index: 10;
 }
-.wp-block-business-card .pro-overlay .overlay-inner {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px 30px;
-  border-radius: 10px;
+.wp-block-business-card .pro-overlay h3 {
+  font-weight: 700;
 }
 .wp-block-business-card .pro-overlay .upgrade-btn {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 14px;
-  background: #ff4757;
+  background: #2196f3;
   color: white;
+  transition: all 0.5s ease;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
+}
+.wp-block-business-card .pro-overlay .upgrade-btn:hover {
+  background: #1976d2;
 }
 .wp-block-business-card * {
   box-sizing: border-box;
@@ -88,6 +91,9 @@
   height: 34px;
   padding: 8px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wp-block-business-card .bcbBusinessCard .contacts .contact .text {
   width: calc(100% - 50px);

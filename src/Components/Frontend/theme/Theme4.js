@@ -15,9 +15,7 @@ const Theme4 = ({ attributes }) => {
     <div className={`${prefix} ${theme}`}>
       <div className="circle circle-1"></div>
       <div className="bcb-card-content">
-        {/* Header Section */}
         <div className="header">
-          {/* Name */}
           {name && (
             <h3
               className="name"
@@ -25,10 +23,8 @@ const Theme4 = ({ attributes }) => {
             />
           )}
 
-          {/* Separator */}
           {isHeaderSep && <span className="separator"></span>}
 
-          {/* Title */}
           {title && (
             <p
               className="title"
@@ -36,7 +32,6 @@ const Theme4 = ({ attributes }) => {
             />
           )}
 
-          {/* Company */}
           {businessCard?.company && (
             <p
               className="company"
@@ -47,7 +42,6 @@ const Theme4 = ({ attributes }) => {
           )}
         </div>
 
-        {/* Contacts Section */}
         <div className="contacts">
           {contacts?.length > 0 &&
             contacts.map((contact, index) => {
@@ -55,7 +49,6 @@ const Theme4 = ({ attributes }) => {
 
               return (
                 <div key={index} className="contact">
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"

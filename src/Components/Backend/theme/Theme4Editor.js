@@ -21,7 +21,6 @@ const Theme4Editor = ({
     <div className={`${prefix} ${theme}`}>
       <div className="circle circle-1"></div>
       <div className="bcb-card-content">
-        {/* Header Section */}
         <div className="header">
           <RichText
             className="name"
@@ -57,7 +56,6 @@ const Theme4Editor = ({
           />
         </div>
 
-        {/* Contacts */}
         <div className="contacts">
           {contacts?.length &&
             contacts.map((contact, index) => {
@@ -71,7 +69,6 @@ const Theme4Editor = ({
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"

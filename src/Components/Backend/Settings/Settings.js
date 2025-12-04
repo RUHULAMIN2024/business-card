@@ -142,7 +142,7 @@ const Settings = ({
               marginBottom: "8px",
             }}
           >
-            {__("Premium Feature", "portfolio-block")}
+            {__("Premium Feature", "business-card")}
           </h3>
 
           <p
@@ -153,16 +153,16 @@ const Settings = ({
           >
             {__(
               "This feature is available only in the Pro version. Upgrade now to unlock enhanced customization and advanced design options.",
-              "portfolio-block"
+              "business-card"
             )}
           </p>
 
           <ul style={{ paddingLeft: "18px", margin: 0 }}>
             <li style={{ marginBottom: "6px" }}>
-              <strong>{__("Fully Customizable:", "portfolio-block")}</strong>{" "}
+              <strong>{__("Fully Customizable:", "business-card")}</strong>{" "}
               {__(
                 "All the options you need to arrange your Business Card just the way you like.",
-                "portfolio-block"
+                "business-card"
               )}
             </li>
           </ul>

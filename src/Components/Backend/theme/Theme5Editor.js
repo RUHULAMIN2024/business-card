@@ -12,12 +12,10 @@ const Theme5Editor = ({
 
   return (
     <div className={`${prefix} ${theme}`}>
-      {/* Background Circles */}
       <div className="circle-1"></div>
       <div className="circle-2"></div>
 
       <div className="bcb-card-content">
-        {/* Header */}
         <div className="header">
           <RichText
             className="company"
@@ -51,7 +49,6 @@ const Theme5Editor = ({
           />
         </div>
 
-        {/* Contacts */}
         <div className="contacts">
           {contacts?.length &&
             contacts.map((contact, index) => {
@@ -65,7 +62,6 @@ const Theme5Editor = ({
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"

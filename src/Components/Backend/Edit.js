@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { __ } from "@wordpress/i18n";
-import { RichText, useBlockProps } from "@wordpress/block-editor";
+import { useBlockProps } from "@wordpress/block-editor";
 
 import { updateData } from "../../../../bpl-tools/utils/functions";
 import { withSelect } from "@wordpress/data";
@@ -19,8 +18,7 @@ const Edit = (props) => {
   const [socialActiveIndex, setSocialActiveIndex] = useState(0);
   const isPremium = Boolean(bcbIsPremium);
 
-  const { name, title, contacts, theme, isHeaderSep, businessCard } =
-    attributes;
+  const { contacts, businessCard } = attributes;
 
   const id = `${prefix}-${clientId}`;
 
@@ -48,32 +46,34 @@ const Edit = (props) => {
         <Style device={device} attributes={attributes} id={id} />
         {postType == "bcb" && <ClipBoard shortcode={`[bcb id=${postId}]`} />}
 
-        <Theme
-          device={device}
-          isPremium={isPremium}
-          isEditor={true}
-          attributes={attributes}
-          id={id}
-          socialActiveIndex={socialActiveIndex}
-          setSocialActiveIndex={setSocialActiveIndex}
-          setAttributes={setAttributes}
-          activeIndex={activeIndex}
-          setActiveIndex={setActiveIndex}
-          updateContact={updateContact}
-        />
-        {businessCard?.isDownloadBtn && (
-          <div>
-            <button
-              className="bcb-download-btn"
-              onClick={() => {
-                const vcardText = generateVCard(attributes);
-                downloadVCard(vcardText, `${attributes.name || "vcard"}.vcf`);
-              }}
-            >
-              Download vCard
-            </button>
-          </div>
-        )}
+        <div style={{ display: "inline-block" }}>
+          <Theme
+            device={device}
+            isPremium={isPremium}
+            isEditor={true}
+            attributes={attributes}
+            id={id}
+            socialActiveIndex={socialActiveIndex}
+            setSocialActiveIndex={setSocialActiveIndex}
+            setAttributes={setAttributes}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+            updateContact={updateContact}
+          />
+          {businessCard?.isDownloadBtn && (
+            <div className="bcb-btn-container">
+              <button
+                className="bcb-download-btn"
+                onClick={() => {
+                  const vcardText = generateVCard(attributes);
+                  downloadVCard(vcardText, `${attributes.name || "vcard"}.vcf`);
+                }}
+              >
+                Download vCard
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

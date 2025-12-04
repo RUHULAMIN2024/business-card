@@ -63,6 +63,7 @@ export const themeSwitch = (theme = "", attributes) =>
         };
         draft["contactTextColor"] = "#828282";
         draft["businessCardStyles"]["contactIconSize"] = "18px";
+        draft["businessCard"]["isDownloadBtn"] = "false";
 
         break;
 
@@ -124,6 +125,7 @@ export const themeSwitch = (theme = "", attributes) =>
         };
         draft["contactTextColor"] = "#828282";
         draft["businessCardStyles"]["contactIconSize"] = "18px";
+        draft["businessCard"]["isDownloadBtn"] = "false";
 
         break;
       // THEME 3
@@ -201,6 +203,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
           color: "#fff",
         };
+        draft["businessCard"]["isDownloadBtn"] = "true";
 
         draft["businessCardStyles"]["company"] = {
           typo: {
@@ -266,7 +269,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
           fontWeight: 400,
         };
-        draft["titleColor"] = "#3b82f6";
+        draft["titleColor"] = "#1f2937";
         draft["contactIconColors"] = {
           color: "",
           bg: "",
@@ -305,6 +308,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
           color: "#fff",
         };
+        draft["businessCard"]["isDownloadBtn"] = "true";
 
         break;
 
@@ -371,6 +375,7 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["contactTextColor"] = "#fff";
         draft["businessCardStyles"]["circle1Color"] = "#ffffff1A";
         draft["businessCardStyles"]["circle2Color"] = "#1e40af33";
+        draft["businessCard"]["isDownloadBtn"] = "true";
 
         draft["businessCardStyles"]["company"] = {
           typo: {
@@ -459,6 +464,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
           color: "#666",
         };
+        draft["businessCard"]["isDownloadBtn"] = "true";
 
         break;
       // THEME 7
@@ -535,6 +541,7 @@ export const themeSwitch = (theme = "", attributes) =>
           },
           color: "#555",
         };
+        draft["businessCard"]["isDownloadBtn"] = "true";
 
         break;
       // THEME 8
@@ -598,6 +605,7 @@ export const themeSwitch = (theme = "", attributes) =>
         };
         draft["contactTextColor"] = "#1f2937";
         draft["businessCardStyles"]["contactIconSize"] = "11px";
+        draft["businessCard"]["isDownloadBtn"] = "true";
 
         break;
 
@@ -654,6 +662,7 @@ export const themeSwitch = (theme = "", attributes) =>
         draft["contactTextColor"] = "#828282";
         draft["businessCardStyles"]["contactIconSize"] = "18px";
         draft["businessCardStyles"]["contactIconSize"] = "18px";
+        draft["businessCard"]["isDownloadBtn"] = "false";
 
         break;
     }

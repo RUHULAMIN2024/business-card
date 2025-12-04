@@ -1707,7 +1707,6 @@ const Theme8Editor = ({
     title,
     contacts,
     theme = "",
-    primaryColor,
     textColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -1858,12 +1857,17 @@ const Style = ({
 		${mainSl}{
 			text-align: ${alignment};
 		}
+		${mainSl} .bcb-btn-container{
+			margin-top: 10px;
+
+		    text-align: ${downloadBtn?.position};
+		}
 		${mainSl} .bcb-download-btn{
+
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(downloadBtn?.colors)}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(downloadBtn?.border)}
 			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(downloadBtn?.padding)};
     		cursor: pointer;
-			margin-top: 16px;
 		}
 
 		${businessCardSl}{
@@ -2683,7 +2687,6 @@ function generateVCard(attributes) {
     name = "",
     title = "",
     contacts,
-    socials,
     businessCard
   } = attributes;
   const company = businessCard.company || "";
@@ -2869,20 +2872,26 @@ document.addEventListener("DOMContentLoaded", () => {
     (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(businessCardEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__["default"], {
       attributes: attributes,
       id: businessCardEl.id
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_theme_theme__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        display: "inline-block"
+      }
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_theme_theme__WEBPACK_IMPORTED_MODULE_4__["default"], {
       isEditor: false,
       attributes: attributes
-    }), " ", attributes?.businessCard?.isDownloadBtn && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    }), " ", attributes?.businessCard?.isDownloadBtn && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "bcb-btn-container"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
       className: "bcb-download-btn",
       onClick: () => {
         const vcardText = (0,_utils_vcard__WEBPACK_IMPORTED_MODULE_5__.generateVCard)(attributes);
         (0,_utils_vcard__WEBPACK_IMPORTED_MODULE_5__.downloadVCard)(vcardText, `${attributes.name || "vcard"}.vcf`);
       }
-    }, "Download vCard")), showOverlay && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, "Download vCard"))), showOverlay && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "pro-overlay"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "overlay-inner"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "\uD83D\uDD12 Premium Theme"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "You need a Pro license to activate this theme."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "\uD83D\uDD12 Premium Theme"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: siteLocation,
       rel: "noreferrer",
       target: "_blank",

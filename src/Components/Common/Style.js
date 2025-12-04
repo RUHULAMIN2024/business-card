@@ -81,12 +81,17 @@ const Style = ({ attributes, id }) => {
 		${mainSl}{
 			text-align: ${alignment};
 		}
+		${mainSl} .bcb-btn-container{
+			margin-top: 10px;
+
+		    text-align: ${downloadBtn?.position};
+		}
 		${mainSl} .bcb-download-btn{
+
 			${getColorsCSS(downloadBtn?.colors)}
 			${getBorderCSS(downloadBtn?.border)}
 			padding:${getBoxCSS(downloadBtn?.padding)};
     		cursor: pointer;
-			margin-top: 16px;
 		}
 
 		${businessCardSl}{

@@ -8,22 +8,13 @@ const Theme8Editor = ({
   setActiveIndex,
   updateContact,
 }) => {
-  const {
-    name,
-    title,
-    contacts,
-    theme = "",
-    primaryColor,
-    textColor,
-  } = attributes;
+  const { name, title, contacts, theme = "", textColor } = attributes;
 
   return (
     <div className={`${prefix} ${theme}`}>
-      {/* Gradient Top Bar */}
       <div className="top-bg"></div>
 
       <div className="bcb-card-content">
-        {/* Name Box */}
         <div className="header">
           <RichText
             tagName="h3"
@@ -44,7 +35,6 @@ const Theme8Editor = ({
           />
         </div>
 
-        {/* Contacts Section */}
         <div className="contacts">
           {contacts?.length &&
             contacts.map((contact, index) => {
@@ -58,7 +48,6 @@ const Theme8Editor = ({
                   onClick={() => setActiveIndex(index)}
                   style={{ color: textColor }}
                 >
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"

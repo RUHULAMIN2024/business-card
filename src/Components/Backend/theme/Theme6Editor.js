@@ -12,7 +12,6 @@ const Theme6Editor = ({
 
   return (
     <div className={`${prefix} ${theme}`}>
-      {/* Left Color Panel */}
       <div className="card-sidebar">
         <div className="sidebar-content">
           <div className="bg-circles">
@@ -24,9 +23,7 @@ const Theme6Editor = ({
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="bcb-card-content">
-        {/* Header Section */}
         <div className="header">
           <RichText
             className="name"
@@ -60,7 +57,6 @@ const Theme6Editor = ({
           />
         </div>
 
-        {/* Contacts */}
         <div className="contacts">
           {contacts?.length &&
             contacts.map((contact, index) => {
@@ -74,7 +70,6 @@ const Theme6Editor = ({
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  {/* {icon?.class && <i className={`icon ${icon?.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"

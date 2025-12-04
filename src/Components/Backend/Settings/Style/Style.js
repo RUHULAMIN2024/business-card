@@ -16,6 +16,7 @@ import {
   SeparatorControl,
   Typography,
   BoxControl,
+  BButtonGroup,
 } from "../../../../../../bpl-tools/Components";
 import {
   BorderControl,
@@ -519,6 +520,28 @@ const Style = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
           title={__("Download Button", "business-card")}
           initialOpen={false}
         >
+          <BButtonGroup
+            label={__("Position:", "business-card")}
+            options={[
+              { label: __("Left", "business-card"), value: "left" },
+              { label: __("Center", "business-card"), value: "center" },
+              { label: __("Right", "business-card"), value: "right" },
+            ]}
+            value={downloadBtn?.position}
+            onChange={(v) =>
+              setAttributes({
+                businessCardStyles: updateData(
+                  businessCardStyles,
+                  v,
+                  "downloadBtn",
+                  "position"
+                ),
+              })
+            }
+            inactiveColor="#555"
+            fontWeight={500}
+          />
+
           <Typography
             label={__("Typography:", "business-card")}
             value={downloadBtn?.typo}

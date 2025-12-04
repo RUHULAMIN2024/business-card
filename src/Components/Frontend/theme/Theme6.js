@@ -6,7 +6,6 @@ const Theme6 = ({ attributes }) => {
 
   return (
     <div className={`${prefix} ${theme}`}>
-      {/* Left Color Panel */}
       <div className="card-sidebar">
         <div className="sidebar-content">
           <div className="bg-circles">
@@ -18,11 +17,8 @@ const Theme6 = ({ attributes }) => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="bcb-card-content">
-        {/* Header Section */}
         <div className="header">
-          {/* Name */}
           {name && (
             <h3
               className="name"
@@ -30,7 +26,6 @@ const Theme6 = ({ attributes }) => {
             />
           )}
 
-          {/* Title */}
           {title && (
             <p
               className="title"
@@ -38,7 +33,6 @@ const Theme6 = ({ attributes }) => {
             />
           )}
 
-          {/* Company */}
           {businessCard?.company && (
             <p
               className="company"
@@ -49,7 +43,6 @@ const Theme6 = ({ attributes }) => {
           )}
         </div>
 
-        {/* Contacts */}
         <div className="contacts">
           {contacts?.length > 0 &&
             contacts.map((contact, index) => {
@@ -57,7 +50,6 @@ const Theme6 = ({ attributes }) => {
 
               return (
                 <div key={index} className="contact">
-                  {/* {icon?.class && <i className={`icon ${icon.class}`}></i>} */}
                   {icon?.svg ? (
                     <span
                       className="icon"

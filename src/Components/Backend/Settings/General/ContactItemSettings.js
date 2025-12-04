@@ -1,10 +1,7 @@
 import { __ } from "@wordpress/i18n";
 import { SelectControl, TextControl } from "@wordpress/components";
 
-import {
-  IconControl,
-  IconLibrary,
-} from "../../../../../../bpl-tools/Components";
+import { IconLibrary } from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../../../bpl-tools/utils/functions";
 import { contactTypeOptions } from "../../../../utils/options";
 
@@ -27,30 +24,23 @@ const ContactItemSettings = ({
   return (
     <>
       <SelectControl
-        label={"Type:"}
-        // labelPosition="left"
+        label={"Contact Type: "}
+        labelPosition="left"
         value={type}
         options={contactTypeOptions}
         onChange={(val) => updateContact(val, "type")}
       />
-      {/* <IconControl
-        value={icon}
-        onChange={(val) => updateContact(val, "icon")}
-        defaults={{ class: "fas fa-globe" }}
-        isSize={false}
-        isColor={false}
-      /> */}
 
       <IconLibrary
         value={icon.svg}
         className="mt10"
-        label="Contact Icon"
+        label="Contact Icon: "
         onChange={(val) => updateContact({ svg: val }, "icon")}
       />
 
       <TextControl
         className="mt15"
-        label={__("Text", "business-card")}
+        label={__("Text:", "business-card")}
         value={text}
         onChange={(val) => updateContact(val, "text")}
       />

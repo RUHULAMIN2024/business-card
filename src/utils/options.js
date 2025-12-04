@@ -38,11 +38,26 @@ export const themeOptions = [
   { label: __("Theme 1", "business-card"), value: "theme1" },
   { label: __("Theme 2", "business-card"), value: "theme2" },
   { label: __("Theme 3", "business-card"), value: "theme3" },
-  { label: __("Theme 4", "business-card"), value: "theme4" },
-  { label: __("Theme 5", "business-card"), value: "theme5" },
-  { label: __("Theme 6", "business-card"), value: "theme6" },
-  { label: __("Theme 7", "business-card"), value: "theme7" },
-  { label: __("Theme 8", "business-card"), value: "theme8" },
+  {
+    label: __(isPremium ? "Theme 4" : "Theme 4 - Pro", "business-card"),
+    value: "theme4",
+  },
+  {
+    label: __(isPremium ? "Theme 5" : "Theme 5 - Pro", "business-card"),
+    value: "theme5",
+  },
+  {
+    label: __(isPremium ? "Theme 6" : "Theme 6 - Pro", "business-card"),
+    value: "theme6",
+  },
+  {
+    label: __(isPremium ? "Theme 7" : "Theme 7 - Pro", "business-card"),
+    value: "theme7",
+  },
+  {
+    label: __(isPremium ? "Theme 8" : "Theme 8 - Pro", "business-card"),
+    value: "theme8",
+  },
 ];
 
 export const previewOptions = [
@@ -85,7 +100,7 @@ export const previewOptions = [
     img: "",
     height: "auto",
     width: "160px",
-    isPro: false,
+    isPro: true,
   },
   {
     label: "Theme 5",
@@ -93,7 +108,7 @@ export const previewOptions = [
     img: "",
     height: "auto",
     width: "160px",
-    isPro: false,
+    isPro: true,
   },
   {
     label: "Theme 6",
@@ -101,7 +116,7 @@ export const previewOptions = [
     img: "",
     height: "auto",
     width: "160px",
-    isPro: false,
+    isPro: true,
   },
   {
     label: "Theme 7",
@@ -109,7 +124,7 @@ export const previewOptions = [
     img: "",
     height: "auto",
     width: "160px",
-    isPro: false,
+    isPro: true,
   },
   {
     label: "Theme 8",
@@ -117,6 +132,6 @@ export const previewOptions = [
     img: "",
     height: "auto",
     width: "160px",
-    isPro: false,
+    isPro: true,
   },
 ];
